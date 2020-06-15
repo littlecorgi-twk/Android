@@ -2,7 +2,9 @@ package com.littlecorgi.thefirstlineofcode3.notificationtest
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -22,11 +24,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         sendNotice.setOnClickListener {
+            val intent = Intent(this, NotificationActivity::class.java)
+            val pi = PendingIntent.getActivity(this, 0, intent, 0)
             val notification = NotificationCompat.Builder(this, "normal").apply {
                 setContentTitle("This is content title")
                 setContentText("This is content text")
                 setSmallIcon(R.drawable.ic_launcher_foreground)
                 setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.ic_launcher_foreground))
+                setContentIntent(pi)
+                // 此时点击通知后，通知并不会自动消失
+
+                // // 设置此属性后就会自动消失
+                // setAutoCancel(true)
             }.build()
             manager.notify(1, notification)
         }
