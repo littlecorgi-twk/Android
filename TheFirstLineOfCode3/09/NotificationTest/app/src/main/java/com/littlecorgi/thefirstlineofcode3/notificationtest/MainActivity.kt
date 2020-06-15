@@ -21,12 +21,14 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel("normal", "Normal", NotificationManager.IMPORTANCE_DEFAULT)
             manager.createNotificationChannel(channel)
+            val channel2 = NotificationChannel("important", "Important", NotificationManager.IMPORTANCE_HIGH)
+            manager.createNotificationChannel(channel2)
         }
 
         sendNotice.setOnClickListener {
             val intent = Intent(this, NotificationActivity::class.java)
             val pi = PendingIntent.getActivity(this, 0, intent, 0)
-            val notification = NotificationCompat.Builder(this, "normal").apply {
+            val notification = NotificationCompat.Builder(this, "important").apply {
                 setContentTitle("This is content title")
                 setContentText("Learn how to build notifications, send and sync data, and use voice actions." +
                         "Get the official Android IDE and developer tools to build apps for Android.")
