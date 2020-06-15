@@ -4,13 +4,17 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        private const val TAG = "MainActivity"
+    }
 
     lateinit var downloadBinder: MyService.DownloadBinder
 
@@ -47,6 +51,12 @@ class MainActivity : AppCompatActivity() {
 
         unbindServiceBtn.setOnClickListener {
             unbindService(connection)
+        }
+
+        startIntentServiceBtn.setOnClickListener {
+            Log.d(TAG, "onCreate: Thread id is ${Thread.currentThread().name}")
+            val intent = Intent(this, MyIntentService::class.java)
+            startService(intent)
         }
     }
 }
