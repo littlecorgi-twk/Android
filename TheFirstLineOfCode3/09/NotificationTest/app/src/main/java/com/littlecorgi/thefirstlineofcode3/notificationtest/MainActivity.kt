@@ -28,10 +28,13 @@ class MainActivity : AppCompatActivity() {
             val pi = PendingIntent.getActivity(this, 0, intent, 0)
             val notification = NotificationCompat.Builder(this, "normal").apply {
                 setContentTitle("This is content title")
-                setContentText("This is content text")
+                setContentText("Learn how to build notifications, send and sync data, and use voice actions." +
+                        "Get the official Android IDE and developer tools to build apps for Android.")
                 setSmallIcon(R.drawable.ic_launcher_foreground)
                 setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.ic_launcher_foreground))
                 setContentIntent(pi)
+                setStyle(NotificationCompat.BigTextStyle().bigText("Learn how to build notifications, send and sync data, and use voice actions." +
+                        "Get the official Android IDE and developer tools to build apps for Android."))
                 // 此时点击通知后，通知并不会自动消失
 
                 // // 设置此属性后就会自动消失
