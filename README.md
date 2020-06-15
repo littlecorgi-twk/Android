@@ -14,4 +14,5 @@
 
 ## TheFirstLineOfCode3 (第一行代码第三版)
 ### 08 扩程序共享数据，探究ContentProvider
-
+1. RuntimePermissionTest 运行时获取权限
+2. ContactsTest 使用ContentPrivoder去获取通讯录
