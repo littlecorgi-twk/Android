@@ -20,4 +20,4 @@
 
 ### 10 后台默默的劳动者，探究Service
 1. AndroidThreadTest Android多线程编程
-2. ServiceTest Service
+2. ServiceTest Service基础用法(startService、bindService)、前台Service、IntentService
