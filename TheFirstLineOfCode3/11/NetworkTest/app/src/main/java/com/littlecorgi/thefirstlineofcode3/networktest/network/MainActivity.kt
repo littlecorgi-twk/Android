@@ -1,8 +1,9 @@
-package com.littlecorgi.thefirstlineofcode3.networktest
+package com.littlecorgi.thefirstlineofcode3.networktest.network
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.littlecorgi.thefirstlineofcode3.networktest.R
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -17,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         sendRequestBtn.setOnClickListener {
-            HttpUtil.sendHttpRequest("https://www.baidu.com/", object : HttpCallbackListener {
+            HttpUtil.sendHttpRequest("https://www.baidu.com/", object :
+                HttpCallbackListener {
                 override fun onFinish(response: String) {
                     showResponse(response)
                 }
@@ -29,7 +31,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         toOkHttpActivityBtn.setOnClickListener {
-            startActivity<OkHttpActivity>(this) {
+            startActivity<OkHttpActivity>(
+                this
+            ) {
                 null
             }
         }

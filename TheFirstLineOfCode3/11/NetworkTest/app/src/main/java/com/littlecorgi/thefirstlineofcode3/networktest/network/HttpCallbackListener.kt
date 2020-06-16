@@ -1,4 +1,4 @@
-package com.littlecorgi.thefirstlineofcode3.networktest
+package com.littlecorgi.thefirstlineofcode3.networktest.network
 
 import java.lang.Exception
 

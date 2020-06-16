@@ -1,4 +1,4 @@
-package com.littlecorgi.thefirstlineofcode3.networktest
+package com.littlecorgi.thefirstlineofcode3.networktest.network
 
 import android.content.Context
 import android.content.Intent

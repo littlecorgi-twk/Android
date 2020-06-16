@@ -1,13 +1,12 @@
-package com.littlecorgi.thefirstlineofcode3.networktest
+package com.littlecorgi.thefirstlineofcode3.networktest.network
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
-import android.util.Log
+import com.littlecorgi.thefirstlineofcode3.networktest.R
 import kotlinx.android.synthetic.main.activity_ok_http.*
 import okhttp3.*
-import okhttp3.internal.wait
 import java.io.IOException
 import java.lang.Exception
 import java.lang.ref.WeakReference
@@ -20,7 +19,10 @@ class OkHttpActivity : AppCompatActivity() {
         const val TAG = "OkHttpActivity"
     }
 
-    private val myHandler = MyHandler(this)
+    private val myHandler =
+        MyHandler(
+            this
+        )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,7 +60,8 @@ class OkHttpActivity : AppCompatActivity() {
 
     private fun showResponse(response: String) {
         val msg = Message.obtain()
-        msg.what = UpdateTextView
+        msg.what =
+            UpdateTextView
         msg.data.putString("Text", response)
         myHandler.sendMessage(msg)
     }

@@ -1,6 +1,5 @@
-package com.littlecorgi.thefirstlineofcode3.networktest
+package com.littlecorgi.thefirstlineofcode3.networktest.network
 
-import okhttp3.OkHttp
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.BufferedReader

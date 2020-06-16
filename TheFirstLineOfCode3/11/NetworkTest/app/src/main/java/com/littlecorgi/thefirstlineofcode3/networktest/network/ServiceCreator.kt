@@ -1,4 +1,4 @@
-package com.littlecorgi.thefirstlineofcode3.networktest
+package com.littlecorgi.thefirstlineofcode3.networktest.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,5 +13,8 @@ object ServiceCreator {
 
     fun <T> create(serviceClass: Class<T>): T = retrofit.create(serviceClass)
 
-    inline fun <reified T> create(): T = create(T::class.java)
+    inline fun <reified T> create(): T =
+        create(
+            T::class.java
+        )
 }
