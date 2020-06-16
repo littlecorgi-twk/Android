@@ -10,24 +10,35 @@ import java.io.InputStreamReader
 import java.lang.Exception
 import java.lang.StringBuilder
 import java.net.HttpURLConnection
+import java.net.Inet4Address
 import java.net.URL
 import kotlin.concurrent.thread
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
+import kotlin.coroutines.suspendCoroutine
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         sendRequestBtn.setOnClickListener {
-            HttpUtil.sendHttpRequest("https://www.baidu.com/", object :
-                HttpCallbackListener {
-                override fun onFinish(response: String) {
-                    showResponse(response)
-                }
 
-                override fun onError(e: Exception) {
-                    Toast.makeText(this@MainActivity, "请求失败", Toast.LENGTH_SHORT).show()
-                }
-            })
+//            sendRequestWithHttpUrlConnection()
+
+//            // 使用HttpUtil
+//            HttpUtil.sendHttpRequest("https://www.baidu.com/", object :
+//                HttpCallbackListener {
+//                override fun onFinish(response: String) {
+//                    showResponse(response)
+//                }
+//
+//                override fun onError(e: Exception) {
+//                    Toast.makeText(this@MainActivity, "请求失败", Toast.LENGTH_SHORT).show()
+//                }
+//            })
+
+            // 使用协程优化
+
         }
 
         toOkHttpActivityBtn.setOnClickListener {
@@ -67,6 +78,28 @@ class MainActivity : AppCompatActivity() {
     private fun showResponse(response: String) {
         runOnUiThread {
             responseText.text = response
+        }
+    }
+
+    suspend fun request(address: String): String {
+        return suspendCoroutine { continuation ->
+            HttpUtil.sendHttpRequest(address, object : HttpCallbackListener {
+                override fun onFinish(response: String) {
+                    continuation.resume(response)
+                }
+
+                override fun onError(e: Exception) {
+                    continuation.resumeWithException(e)
+                }
+            })
+        }
+    }
+
+    suspend fun getBaiduResponse() {
+        try {
+            val response = request("https://www.baidu.com/")
+        } catch (e: Exception) {
+            
         }
     }
 }
