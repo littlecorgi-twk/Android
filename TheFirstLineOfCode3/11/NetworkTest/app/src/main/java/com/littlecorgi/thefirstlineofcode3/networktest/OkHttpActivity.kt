@@ -6,10 +6,9 @@ import android.os.Handler
 import android.os.Message
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_ok_http.*
-import okhttp3.OkHttp
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import okhttp3.*
 import okhttp3.internal.wait
+import java.io.IOException
 import java.lang.Exception
 import java.lang.ref.WeakReference
 import kotlin.concurrent.thread
@@ -27,7 +26,15 @@ class OkHttpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ok_http)
         button.setOnClickListener {
-            sendRequestWithOkHttp()
+            HttpUtil.sendOkHttpRequest("https://www.baidu.com", object : okhttp3.Callback {
+                override fun onFailure(call: Call, e: IOException) {
+
+                }
+
+                override fun onResponse(call: Call, response: Response) {
+                    showResponse(response.body!!.string())
+                }
+            })
         }
     }
 
