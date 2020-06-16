@@ -55,43 +55,91 @@ fun main() {
 //    val end = System.currentTimeMillis()
 //    println(end - start)
 
-    // 使用suspend关键字去声明挂起函数，使用coroutineScope函数去继承外部的协程作用域并创建子协程
-    suspend fun printDot() = coroutineScope {
-        launch {
-            println(".")
-            delay(1000)
-        }
-    }
+//    // 使用suspend关键字去声明挂起函数，使用coroutineScope函数去继承外部的协程作用域并创建子协程
+//    suspend fun printDot() = coroutineScope {
+//        launch {
+//            println(".")
+//            delay(1000)
+//        }
+//    }
+//
+//    runBlocking {
+//        coroutineScope {
+//            launch {
+//                for (i in 0..10) {
+//                    println(i)
+//                    delay(1000)
+//                }
+//            }
+//            // 但是coroutineScope无法阻塞他自己的子协程
+//            launch {
+//                println("coroutineScopeP: another coroutine")
+//            }
+//        }
+//        // 由于coroutineScope有阻塞性，所以他会一直等他的子协程全部执行完毕后，才会执行其他协程
+//        launch {
+//            println(".")
+//        }
+//        println("coroutineScope finished")
+//    }
+//    println("runBlocking finished")
+//
+//    GlobalScope.launch {
+//        coroutineScope {
+//            launch {
+//                for (i in 0..2) {
+//                    println("Global $i")
+//                    delay(1000)
+//                }
+//            }
+//        }
+//    }
+
+//    val job = Job()
+//    // 注意：CoroutineScope是一个函数，而不是一个类
+//    val scope = CoroutineScope(job)
+//    scope.launch {
+//        println("1")
+//    }
+//    // 这样可以一次性取消上面scope中的所有携程
+//    job.cancel()
+
+//    runBlocking {
+//        val start = System.currentTimeMillis()
+//        // await函数会阻塞当前协程
+//        val result = async {
+//            delay(1000)
+//            5 + 5
+//        }.await()
+//        val result2 = async {
+//            delay(1000)
+//            4 + 6
+//        }.await()
+//        println("result is ${result + result2}")
+//        val end = System.currentTimeMillis()
+//        println("cost ${end - start} ms.")
+//    }
+
+//    runBlocking {
+//        val start = System.currentTimeMillis()
+//        // 可以将await放到后面，让async先执行，最后需要时在调用await给出结果
+//        val deferred1 = async {
+//            delay(1000)
+//            5 + 5
+//        }
+//        val deferred2 = async {
+//            delay(1000)
+//            4 + 6
+//        }
+//        println("result is ${deferred1.await() + deferred2.await()}")
+//        val end = System.currentTimeMillis()
+//        println("cost ${end - start} ms.")
+//    }
 
     runBlocking {
-        coroutineScope {
-            launch {
-                for (i in 0..10) {
-                    println(i)
-                    delay(1000)
-                }
-            }
-            // 但是coroutineScope无法阻塞他自己的子协程
-            launch {
-                println("coroutineScopeP: another coroutine")
-            }
+        val result = withContext(Dispatchers.Default) {
+            5 + 5
         }
-        // 由于coroutineScope有阻塞性，所以他会一直等他的子协程全部执行完毕后，才会执行其他协程
-        launch {
-            println(".")
-        }
-        println("coroutineScope finished")
-    }
-    println("runBlocking finished")
-
-    GlobalScope.launch {
-        coroutineScope {
-            launch {
-                for (i in 0..2) {
-                    println("Global $i")
-                    delay(1000)
-                }
-            }
-        }
+        println(result)
     }
 }
