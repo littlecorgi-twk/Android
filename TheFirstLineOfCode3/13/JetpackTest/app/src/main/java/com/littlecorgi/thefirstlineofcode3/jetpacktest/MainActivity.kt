@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Message
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.littlecorgi.thefirstlineofcode3.jetpacktest.lifecycle.MyObserver
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.viewmodel.MainViewModel
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.viewmodel.MainViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
@@ -40,6 +41,8 @@ class MainActivity : AppCompatActivity() {
             refreshCounter()
         }
         refreshCounter()
+
+        lifecycle.addObserver(MyObserver(lifecycle))
     }
 
     private fun refreshCounter() {
