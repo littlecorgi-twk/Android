@@ -2,17 +2,13 @@ package com.littlecorgi.thefirstlineofcode3.jetpacktest
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Message
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.lifecycle.MyObserver
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.viewmodel.MainViewModel
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.viewmodel.MainViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.ref.WeakReference
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +22,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        toMotionActivityBtn.setOnClickListener {
+            startToActivity<MotionActivity>(this) {
+                null
+            }
+        }
+
         sp = getPreferences(Context.MODE_PRIVATE)
         val countReserved = sp.getInt("count_reserved", 0)
         viewModel = ViewModelProvider(
