@@ -53,4 +53,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clearBtn" />
 
+    <Button
+        android:id="@+id/getUserFormRoomBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Get User From Room"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getUserBtn" />
+
+    <Button
+        android:id="@+id/addDataBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Add Data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getUserFormRoomBtn" />
+
+    <Button
+        android:id="@+id/updateDataBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Update Data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addDataBtn" />
+
+    <Button
+        android:id="@+id/deleteDataBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Delete Data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateDataBtn" />
+
+    <Button
+        android:id="@+id/queryDataBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Query Data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deleteDataBtn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

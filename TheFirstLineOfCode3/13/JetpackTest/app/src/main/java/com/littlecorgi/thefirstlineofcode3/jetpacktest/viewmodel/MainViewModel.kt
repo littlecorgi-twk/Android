@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.littlecorgi.thefirstlineofcode3.jetpacktest.bean.User
+import com.littlecorgi.thefirstlineofcode3.jetpacktest.room.bean.User
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.repository.Repository
 
 class MainViewModel(countReserved: Int) : ViewModel() {
