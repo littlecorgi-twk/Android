@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.bean.User
+import com.littlecorgi.thefirstlineofcode3.jetpacktest.repository.Repository
 
 class MainViewModel(countReserved: Int) : ViewModel() {
     val counter: LiveData<Int>
@@ -13,6 +14,12 @@ class MainViewModel(countReserved: Int) : ViewModel() {
     private val _counter = MutableLiveData<Int>()
 
     private val userLiveData = MutableLiveData<User>()
+
+    private val userIdLiveData = MutableLiveData<String>()
+
+    val user: LiveData<User> = Transformations.switchMap(userIdLiveData) { userId ->
+        Repository.getUser(userId)
+    }
 
     val userName = Transformations.map(userLiveData) { user ->
         "${user.firstName} ${user.lastName}"
@@ -28,5 +35,9 @@ class MainViewModel(countReserved: Int) : ViewModel() {
 
     fun clear() {
         _counter.value = 0
+    }
+
+    fun getUser(userId: String) {
+        userIdLiveData.value = userId
     }
 }

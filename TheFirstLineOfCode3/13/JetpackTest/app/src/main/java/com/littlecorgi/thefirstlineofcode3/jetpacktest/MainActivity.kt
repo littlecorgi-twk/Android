@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.observe
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.lifecycle.MyObserver
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.viewmodel.MainViewModel
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.viewmodel.MainViewModelFactory
@@ -45,6 +44,13 @@ class MainActivity : AppCompatActivity() {
         }
         viewModel.counter.observe(this, Observer {
             infoText.text = it.toString()
+        })
+        getUserBtn.setOnClickListener {
+            val userId = (0..10000).random().toString()
+            viewModel.getUser(userId)
+        }
+        viewModel.user.observe(this, Observer { user ->
+            infoText.text = user.firstName
         })
 
         lifecycle.addObserver(MyObserver(lifecycle))
