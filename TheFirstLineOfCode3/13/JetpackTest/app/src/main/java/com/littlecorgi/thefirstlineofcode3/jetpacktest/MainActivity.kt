@@ -7,11 +7,14 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.work.OneTimeWorkRequest
+import androidx.work.WorkManager
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.lifecycle.MyObserver
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.room.bean.User
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.room.database.AppDatabase
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.viewmodel.MainViewModel
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.viewmodel.MainViewModelFactory
+import com.littlecorgi.thefirstlineofcode3.jetpacktest.workmanager.SimpleWorker
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.concurrent.thread
 
@@ -85,6 +88,11 @@ class MainActivity : AppCompatActivity() {
                     Log.d(TAG, "onCreate: $user")
                 }
             }
+        }
+
+        doWorkBtn.setOnClickListener {
+            val request = OneTimeWorkRequest.Builder(SimpleWorker::class.java).build()
+            WorkManager.getInstance(this).enqueue(request)
         }
     }
 
