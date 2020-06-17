@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.work.BackoffPolicy
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.lifecycle.MyObserver
@@ -16,6 +17,7 @@ import com.littlecorgi.thefirstlineofcode3.jetpacktest.viewmodel.MainViewModel
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.viewmodel.MainViewModelFactory
 import com.littlecorgi.thefirstlineofcode3.jetpacktest.workmanager.SimpleWorker
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.concurrent.TimeUnit
 import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
@@ -91,7 +93,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         doWorkBtn.setOnClickListener {
-            val request = OneTimeWorkRequest.Builder(SimpleWorker::class.java).build()
+            val request = OneTimeWorkRequest.Builder(SimpleWorker::class.java)
+                .setInitialDelay(5, TimeUnit.MINUTES)
+                // 可以通过标签取消后台任务
+                .addTag("simple")
+                // 使用setBackoffCriteria去设置重新执行任务
+                .setBackoffCriteria(BackoffPolicy.LINEAR, 10, TimeUnit.SECONDS)
+                .build()
             WorkManager.getInstance(this).enqueue(request)
         }
     }
