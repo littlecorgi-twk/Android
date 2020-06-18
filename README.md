@@ -12,7 +12,7 @@
 
 ### CoolWeather
 
-[a1203991686/CoolWeather](https://github.com/a1203991686/CoolWeather)
+[a1203991686/CoolWeather/2/CoolWeather](https://github.com/a1203991686/CoolWeather/tree/master/2/CoolWeather)
 
 ## TheFirstLineOfCode3 (第一行代码第三版)
 ### 08 扩程序共享数据，探究ContentProvider
@@ -35,3 +35,6 @@
 
 ### 14 继续进阶，你还应该掌握的高级技巧
 1. ContextTest 全局获取Context、定制Toast、定制Log、Parcelable
+
+### 15 SunnyWeather
+[a1203991686/CoolWeather/3/SunnyWeather](https://github.com/a1203991686/CoolWeather/tree/master/3/SunnyWeather)
