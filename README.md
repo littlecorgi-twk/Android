@@ -34,4 +34,4 @@
 1. JetpackTest 
 
 ### 14 继续进阶，你还应该掌握的高级技巧
-1. ContextTest 全局获取Context
+1. ContextTest 全局获取Context、定制Toast、定制Log、Parcelable
