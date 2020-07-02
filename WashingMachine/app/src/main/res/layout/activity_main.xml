@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.littlecorgi.washingmachine.MainActivity">
+
+    <Button
+        android:id="@+id/button_water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="水位"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_base_model"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_reserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="预约时间"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_base_model"
+        app:layout_constraintTop_toTopOf="@+id/button_base_model" />
+
+    <Button
+        android:id="@+id/button_washing_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:text="洗涤模式"
+        app:layout_constraintBottom_toTopOf="@+id/textView_spin_time"
+        app:layout_constraintEnd_toStartOf="@+id/button_RinsingTimes"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_RinsingTimes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="漂洗次数"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_washing_mode" />
+
+    <Button
+        android:id="@+id/button_washing_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="洗涤时间"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_RinsingTimes"
+        app:layout_constraintTop_toTopOf="@+id/button_RinsingTimes" />
+
+    <Button
+        android:id="@+id/button_spin_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="脱水时间"
+        app:layout_constraintBottom_toTopOf="@+id/textView_water"
+        app:layout_constraintEnd_toStartOf="@+id/button_temperature"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="温度"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_spin_time" />
+
+    <Button
+        android:id="@+id/button_rpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="转速"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_temperature"
+        app:layout_constraintTop_toTopOf="@+id/button_temperature" />
+
+    <TextView
+        android:id="@+id/textView_water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="中"
+        app:layout_constraintBottom_toTopOf="@+id/button_water"
+        app:layout_constraintEnd_toEndOf="@+id/button_water"
+        app:layout_constraintStart_toStartOf="@+id/button_water" />
+
+    <TextView
+        android:id="@+id/textView_reserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0H"
+        app:layout_constraintBottom_toTopOf="@+id/button_reserve"
+        app:layout_constraintEnd_toEndOf="@+id/button_reserve"
+        app:layout_constraintStart_toStartOf="@+id/button_reserve" />
+
+    <TextView
+        android:id="@+id/textView_washing_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="标准"
+        app:layout_constraintBottom_toTopOf="@+id/button_washing_mode"
+        app:layout_constraintEnd_toEndOf="@+id/button_washing_mode"
+        app:layout_constraintStart_toStartOf="@+id/button_washing_mode" />
+
+    <TextView
+        android:id="@+id/textView_rinsing_times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        app:layout_constraintBottom_toTopOf="@+id/button_RinsingTimes"
+        app:layout_constraintEnd_toEndOf="@+id/button_RinsingTimes"
+        app:layout_constraintStart_toStartOf="@+id/button_RinsingTimes" />
+
+    <TextView
+        android:id="@+id/textView_washing_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30min"
+        app:layout_constraintBottom_toTopOf="@+id/button_washing_time"
+        app:layout_constraintEnd_toEndOf="@+id/button_washing_time"
+        app:layout_constraintStart_toStartOf="@+id/button_washing_time" />
+
+    <TextView
+        android:id="@+id/textView_spin_time"
+        android:layout_width="32dp"
+        android:layout_height="18dp"
+        android:text="10min"
+        app:layout_constraintBottom_toTopOf="@+id/button_spin_time"
+        app:layout_constraintEnd_toEndOf="@+id/button_spin_time"
+        app:layout_constraintStart_toStartOf="@+id/button_spin_time" />
+
+    <TextView
+        android:id="@+id/textView_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20℃"
+        app:layout_constraintBottom_toTopOf="@+id/button_temperature"
+        app:layout_constraintEnd_toEndOf="@+id/button_temperature"
+        app:layout_constraintStart_toStartOf="@+id/button_temperature" />
+
+    <TextView
+        android:id="@+id/textView_rpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1000rpm"
+        app:layout_constraintBottom_toTopOf="@+id/button_rpm"
+        app:layout_constraintEnd_toEndOf="@+id/button_rpm"
+        app:layout_constraintStart_toStartOf="@+id/button_rpm" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/switch_door_lock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switch_door_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="关门"
+        android:thumb="@drawable/switch_custom_thumb_selector"
+        android:track="@drawable/switch_custom_track_selector"
+        app:layout_constraintBottom_toTopOf="@+id/textView_washing_mode"
+        app:layout_constraintEnd_toStartOf="@+id/switch_door_lock"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/switch_door_lock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="锁门"
+        android:thumb="@drawable/switch_custom_thumb_selector"
+        android:track="@drawable/switch_custom_track_selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/switch_door_close" />
+
+    <Switch
+        android:id="@+id/switch_running"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="运行"
+        android:thumb="@drawable/switch_custom_thumb_selector"
+        android:track="@drawable/switch_custom_track_selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/switch_door_lock"
+        app:layout_constraintTop_toTopOf="@+id/switch_door_lock" />
+
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动洗衣机"
+        android:theme="@style/Widget.AppCompat.Button.Borderless"
+        app:layout_constraintBottom_toTopOf="@+id/switch_door_lock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <Button
+        android:id="@+id/button_base_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="模式"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_water" />
+
+    <TextView
+        android:id="@+id/textView_base_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="混合洗"
+        app:layout_constraintBottom_toTopOf="@+id/button_base_model"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_force_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="强制停止"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_start"
+        app:layout_constraintTop_toTopOf="@+id/button_start" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="洗衣机停止中"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
