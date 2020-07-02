@@ -37,5 +37,5 @@ dependencies {
 
     implementation 'com.github.duanhong169:picker-view:1.0.0'
     implementation "androidx.cardview:cardview:1.0.0"
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
 }
