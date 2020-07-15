@@ -1,5 +1,6 @@
 package com.littlecorgi.washingmachine;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -401,6 +402,12 @@ public class MainActivity extends AppCompatActivity {
                     mProgressBar.setProgress(0);
                     mTextView.setText("洗衣机停止中");
                 }
+            }
+        });
+        findViewById(R.id.button_to_new_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SecondActivity.class));
             }
         });
     }
