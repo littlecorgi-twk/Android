@@ -1,6 +1,5 @@
 package com.littlecorgi.test
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -9,12 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.littlecorgi.test.databinding.ActivityMainBinding
+import com.littlecorgi.test.lifecycle_test.LifecycleActivity
+import com.littlecorgi.test.utils.toActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mBinding: ActivityMainBinding
+    private lateinit var mBinding: com.littlecorgi.test.databinding.ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,5 +40,15 @@ class MainActivity : AppCompatActivity() {
             }, 1000)
             Looper.loop()
         }.start()
+    }
+
+    fun navigationToActivity(view: View) {
+        when (view.id) {
+            R.id.button_to_lifecycle_activity -> {
+                toActivity<LifecycleActivity>(this) {
+                    null
+                }
+            }
+        }
     }
 }
