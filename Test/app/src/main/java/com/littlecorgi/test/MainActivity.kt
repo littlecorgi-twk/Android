@@ -10,12 +10,13 @@ import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.databinding.ActivityMainBinding
 import com.littlecorgi.test.lifecycle_test.LifecycleActivity
 import com.littlecorgi.test.utils.toActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mBinding: com.littlecorgi.test.databinding.ActivityMainBinding
+    private lateinit var mBinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
