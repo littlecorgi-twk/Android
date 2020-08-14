@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.littlecorgi.test.databinding.ActivityMainBinding
+import com.littlecorgi.test.eventbus_test.EventBusActivity
 import com.littlecorgi.test.lifecycle_test.LifecycleActivity
 import com.littlecorgi.test.utils.toActivity
 
@@ -47,6 +48,11 @@ class MainActivity : AppCompatActivity() {
         when (view.id) {
             R.id.button_to_lifecycle_activity -> {
                 toActivity<LifecycleActivity>(this) {
+                    null
+                }
+            }
+            R.id.button_to_event_bus_activity -> {
+                toActivity<EventBusActivity>(this) {
                     null
                 }
             }
