@@ -38,6 +38,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    // EventBus
-    implementation 'org.greenrobot:eventbus:3.2.0'
+    // EventBus 和 EventBus的kapt
+    def eventbus_version = '3.2.0'
+    implementation "org.greenrobot:eventbus:$eventbus_version"
+    kapt "org.greenrobot:eventbus-annotation-processor:$eventbus_version"
+}
+
+kapt {
+    arguments {
+        // EventBus的kapt
+        arg('eventBusIndex', 'com.example.myapp.MyEventBusIndex')
+    }
 }
