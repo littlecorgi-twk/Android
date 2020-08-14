@@ -32,6 +32,7 @@ class EventBusActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_bus)
+//        // 在此处将Observer添加，那么就会从OnCreate开始就监听生命周期
 //        val eventBusRegisterObserver = EventBusRegisterObserver(this)
 //        lifecycle.addObserver(eventBusRegisterObserver)
     }
@@ -40,11 +41,15 @@ class EventBusActivity : AppCompatActivity() {
         when (view.id) {
             R.id.button_send__test_event -> {
                 singleThread.execute {
+                    // 发送普通事件，只有在注册了EventBus之后再发送此事件才能收到
                     EventBus.getDefault().post(TestEvent("test"))
+                    // 发送粘性事件，只要发送，哪怕EventBus在事件发送之后注册，都还能收到
                     EventBus.getDefault().postSticky(TestEvent("testSticky"))
                 }
             }
             R.id.button_register_event_bus -> {
+                // 为了模拟在事件发送之后注册，就把添加Observer放到了此处，
+                // 并且由于Lifecycle的数据倒灌的特性，此时尽管处于OnResume仍会去执行监听OnCreate的方法
                 val eventBusRegisterObserver = EventBusRegisterObserver(this)
                 lifecycle.addObserver(eventBusRegisterObserver)
             }
