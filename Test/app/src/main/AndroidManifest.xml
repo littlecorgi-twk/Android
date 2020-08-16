@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".eventbus_test.EventBusActivity"></activity>
+        <activity android:name=".lifecycle_test.BackLifecycleActivity"></activity>
+        <activity android:name=".eventbus_test.EventBusActivity" />
         <activity
             android:name=".lifecycle_test.LifecycleActivity"
             android:configChanges="orientation|screenSize" />
