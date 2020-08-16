@@ -1,0 +1,15 @@
+# Test
+平时Android的测试代码，具体测试项目可以看每次的Commit
+
+## EventBusTest
+EventBus相关测试：
+- EventBus用法
+- EventBus粘性事件
+
+## LifecycleTest
+关于生命周期和Lifecycle的相关测试：
+- Activity全部生命周期调用顺序
+- Lifecycle简单使用
+- 当Activity跳转时两个Activity的生命周期顺序
+- 当Activity返回时两个Activity的生命周期顺序
+
