@@ -33,9 +33,9 @@
             android:onClick="navigationToActivity"
             android:text="ToLifecycleActivity"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@+id/activity_main_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/button_to_event_bus_activity"
+            app:layout_constraintEnd_toEndOf="@+id/button_to_event_bus_activity"
+            app:layout_constraintStart_toStartOf="@+id/button_to_event_bus_activity"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
@@ -48,7 +48,19 @@
             app:layout_constraintBottom_toTopOf="@+id/activity_main_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_to_lifecycle_activity" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_to_mvvm_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="navigationToActivity"
+            android:text="toMVVMActivity"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/activity_main_text"
+            app:layout_constraintEnd_toEndOf="@+id/button_to_event_bus_activity"
+            app:layout_constraintStart_toStartOf="@+id/button_to_event_bus_activity"
+            app:layout_constraintTop_toBottomOf="@+id/button_to_event_bus_activity" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

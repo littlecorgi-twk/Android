@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil
 import com.littlecorgi.test.databinding.ActivityMainBinding
 import com.littlecorgi.test.eventbus_test.EventBusActivity
 import com.littlecorgi.test.lifecycle_test.LifecycleActivity
+import com.littlecorgi.test.mvvm_test.MvvmActivity
 import com.littlecorgi.test.utils.toActivity
 
 class MainActivity : AppCompatActivity() {
@@ -53,6 +54,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.button_to_event_bus_activity -> {
                 toActivity<EventBusActivity>(this) {
+                    null
+                }
+            }
+            R.id.button_to_mvvm_activity -> {
+                toActivity<MvvmActivity>(this) {
                     null
                 }
             }

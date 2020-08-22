@@ -1,6 +1,10 @@
 # Test
 平时Android的测试代码，具体测试项目可以看每次的Commit
 
+## CustomView
+自定义View
+- FlowLayout：流式布局
+
 ## EventBusTest
 EventBus相关测试：
 - EventBus用法
@@ -13,3 +17,6 @@ EventBus相关测试：
 - 当Activity跳转时两个Activity的生命周期顺序
 - 当Activity返回时两个Activity的生命周期顺序
 
+## MVVMTest
+Jetpack实现MVVM
+- LiveData和ViewModel的基本使用
