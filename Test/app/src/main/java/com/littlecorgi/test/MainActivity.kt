@@ -10,6 +10,7 @@ import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.broadcast_test.BroadcastActivity
 import com.littlecorgi.test.databinding.ActivityMainBinding
 import com.littlecorgi.test.eventbus_test.EventBusActivity
 import com.littlecorgi.test.lifecycle_test.LifecycleActivity
@@ -59,6 +60,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.button_to_mvvm_activity -> {
                 toActivity<MvvmActivity>(this) {
+                    null
+                }
+            }
+            R.id.button_to_broadcast_activity -> {
+                toActivity<BroadcastActivity>(this) {
                     null
                 }
             }

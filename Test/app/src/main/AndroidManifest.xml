@@ -3,13 +3,23 @@
     package="com.littlecorgi.test">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".MyApplication">
+        android:theme="@style/AppTheme">
+        <receiver
+            android:name=".broadcast_test.ManifestBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.littlecorgi.test.ManifestBroadcast" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".broadcast_test.BroadcastActivity" />
         <activity android:name=".mvvm_test.MvvmActivity" />
         <activity android:name=".lifecycle_test.BackLifecycleActivity" />
         <activity android:name=".eventbus_test.EventBusActivity" />
