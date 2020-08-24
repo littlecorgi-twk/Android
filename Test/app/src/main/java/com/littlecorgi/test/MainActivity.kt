@@ -15,6 +15,7 @@ import com.littlecorgi.test.databinding.ActivityMainBinding
 import com.littlecorgi.test.eventbus_test.EventBusActivity
 import com.littlecorgi.test.lifecycle_test.LifecycleActivity
 import com.littlecorgi.test.mvvm_test.MvvmActivity
+import com.littlecorgi.test.network_test.NetworkActivity
 import com.littlecorgi.test.utils.toActivity
 
 class MainActivity : AppCompatActivity() {
@@ -65,6 +66,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.button_to_broadcast_activity -> {
                 toActivity<BroadcastActivity>(this) {
+                    null
+                }
+            }
+            R.id.button_to_network_activity -> {
+                toActivity<NetworkActivity>(this) {
                     null
                 }
             }

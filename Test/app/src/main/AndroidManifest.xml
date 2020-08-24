@@ -10,6 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".network_test.retrofit.RetrofitActivity"></activity>
+        <activity android:name=".network_test.okhttp.OkHttpActivity" />
+        <activity android:name=".network_test.NetworkActivity" />
+
         <receiver
             android:name=".broadcast_test.ManifestBroadcastReceiver"
             android:enabled="true"
