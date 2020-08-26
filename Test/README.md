@@ -9,7 +9,8 @@
 
 ## CustomView
 自定义View
-- FlowLayout：流式布局
+- FlowLayout：流式布局  
+- ZEditText:验证码输入View，[ZEditText：自定义密码输入框](https://blog.csdn.net/u011315960/article/details/107918423)
 
 ## EventBusTest
 EventBus相关测试：
