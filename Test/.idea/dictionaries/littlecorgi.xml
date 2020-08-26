@@ -4,6 +4,7 @@
       <w>eventbus</w>
       <w>jetpack</w>
       <w>kapt</w>
+      <w>leakcanary</w>
       <w>littlecorgi</w>
       <w>mvvm</w>
     </words>

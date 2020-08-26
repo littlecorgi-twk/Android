@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".leakcanary_test.LeakCanaryActivity">
+
+        <Button
+            android:id="@+id/btn_to_handler_leak_memory_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="testHandlerLeakMemory"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_test_handler_leak_memory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试Handler引起的内存泄漏"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_to_handler_leak_memory_activity"
+            app:layout_constraintStart_toEndOf="@+id/btn_to_handler_leak_memory_activity"
+            app:layout_constraintTop_toTopOf="@+id/btn_to_handler_leak_memory_activity" />
+
+        <Button
+            android:id="@+id/btn_to_event_bus_leak_memory_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="testEventBusLeakMemory"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_to_handler_leak_memory_activity" />
+
+        <TextView
+            android:id="@+id/tv_test_event_bus_leak_memory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试EventBus内存泄漏"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_to_event_bus_leak_memory_activity"
+            app:layout_constraintStart_toEndOf="@+id/btn_to_event_bus_leak_memory_activity"
+            app:layout_constraintTop_toTopOf="@+id/btn_to_event_bus_leak_memory_activity" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

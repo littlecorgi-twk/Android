@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil
 import com.littlecorgi.test.broadcast_test.BroadcastActivity
 import com.littlecorgi.test.databinding.ActivityMainBinding
 import com.littlecorgi.test.eventbus_test.EventBusActivity
+import com.littlecorgi.test.leakcanary_test.LeakCanaryActivity
 import com.littlecorgi.test.lifecycle_test.LifecycleActivity
 import com.littlecorgi.test.mvvm_test.MvvmActivity
 import com.littlecorgi.test.network_test.NetworkActivity
@@ -71,6 +72,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.button_to_network_activity -> {
                 toActivity<NetworkActivity>(this) {
+                    null
+                }
+            }
+            R.id.button_to_leakcanary_activity -> {
+                toActivity<LeakCanaryActivity>(this) {
                     null
                 }
             }

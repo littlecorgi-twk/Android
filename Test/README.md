@@ -17,6 +17,11 @@ EventBus相关测试：
 - EventBus用法
 - EventBus粘性事件
 
+## LeakCanaryTest
+通过LeakCanary检测内存泄漏测试：
+- HandlerLeakMemoryActivity：检测Handler引起的内存泄漏  
+- EventBusLeakMemoryActivity：检测EventBus引起的内存泄漏
+
 ## LifecycleTest
 关于生命周期和Lifecycle的相关测试：
 - Activity全部生命周期调用顺序
