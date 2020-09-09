@@ -71,6 +71,6 @@ dependencies {
 kapt {
     arguments {
         // EventBus的kapt
-        arg('eventBusIndex', 'com.example.myapp.MyEventBusIndex')
+        arg('eventBusIndex', 'com.littlecorgi.test.MyEventBusIndex')
     }
 }
