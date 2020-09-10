@@ -8,7 +8,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import com.littlecorgi.test.R
-import com.littlecorgi.test.eventbus_test.event.TestEvent
+import com.littlecorgi.test.eventbus_test.event.SuperTestEvent
 import org.greenrobot.eventbus.EventBus
 import java.lang.ref.WeakReference
 import java.util.concurrent.LinkedBlockingQueue
@@ -37,10 +37,14 @@ class EventBusActivity : BaseEventBusActivity() {
         when (view.id) {
             R.id.button_send__test_event -> {
                 singleThread.execute {
-                    // 发送普通事件，只有在注册了EventBus之后再发送此事件才能收到
-                    EventBus.getDefault().post(TestEvent("test"))
-                    // 发送粘性事件，只要发送，哪怕EventBus在事件发送之后注册，都还能收到
-                    EventBus.getDefault().postSticky(TestEvent("testSticky"))
+                    // // 发送普通事件，只有在注册了EventBus之后再发送此事件才能收到
+                    // EventBus.getDefault().post(TestEvent("test"))
+                    // // 发送粘性事件，只要发送，哪怕EventBus在事件发送之后注册，都还能收到
+                    // EventBus.getDefault().postSticky(TestEvent("testSticky"))
+                    // 发送子类消息，看看父类的订阅者能不能收到
+                    EventBus.getDefault().post(SuperTestEvent("发送SuperTestEvent"))
+                    // 发送子类黏性消息，看看父类的订阅者能不能收到
+                    EventBus.getDefault().postSticky(SuperTestEvent("发送黏性SuperTestEvent"))
                 }
             }
             R.id.button_register_event_bus -> {
