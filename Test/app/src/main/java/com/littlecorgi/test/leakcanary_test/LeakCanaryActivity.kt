@@ -25,5 +25,15 @@ class LeakCanaryActivity : AppCompatActivity() {
                 null
             }
         }
+        mBinding.btnToBroadcastLeakcanaryActivity.setOnClickListener {
+            toActivity<BroadcastLeakCanaryActivity>(this@LeakCanaryActivity) {
+                null
+            }
+        }
+        mBinding.btnToServiceLeakCanaryActivity.setOnClickListener {
+            toActivity<ServiceLeakCanaryActivity>(this@LeakCanaryActivity) {
+                null
+            }
+        }
     }
 }

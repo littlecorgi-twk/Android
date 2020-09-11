@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".leakcanary_test.BroadcastLeakCanaryActivity">
+
+        <Button
+            android:id="@+id/btn_register_braodcast_reciever"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RegisterBroadcastReciever"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.20" />
+
+        <Button
+            android:id="@+id/btn_unregister_broadcast_reciever"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UnregisterBroadcastReciever"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_register_braodcast_reciever" />
+
+        <Button
+            android:id="@+id/btn_send_broadcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SendBroadcast"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_unregister_broadcast_reciever" />
+
+        <Button
+            android:id="@+id/btn_send_order_broadcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SendOrderBroadcast"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_send_broadcast" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -48,5 +48,27 @@
             app:layout_constraintStart_toEndOf="@+id/btn_to_event_bus_leak_memory_activity"
             app:layout_constraintTop_toTopOf="@+id/btn_to_event_bus_leak_memory_activity" />
 
+        <Button
+            android:id="@+id/btn_to_broadcast_leakcanary_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="broadcastLeakCanaryActivity"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_to_event_bus_leak_memory_activity" />
+
+        <Button
+            android:id="@+id/btn_to_service_leak_canary_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="serviceLeakCanaryActivity"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_to_broadcast_leakcanary_activity" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

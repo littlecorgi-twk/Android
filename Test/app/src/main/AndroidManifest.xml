@@ -10,7 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".eventbus_test.BaseEventBusActivity"></activity>
+        <service
+            android:name=".leakcanary_test.service.MyService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity android:name=".leakcanary_test.BroadcastLeakCanaryActivity" />
+        <activity android:name=".leakcanary_test.ServiceLeakCanaryActivity" />
+        <activity android:name=".eventbus_test.BaseEventBusActivity" />
         <activity android:name=".leakcanary_test.EventBusLeakMemoryActivity" />
         <activity android:name=".leakcanary_test.HandlerLeakMemoryActivity" />
         <activity android:name=".leakcanary_test.LeakCanaryActivity" />
