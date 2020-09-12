@@ -18,5 +18,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_show_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ShowMeADialog"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_to_back_lifecycle_activity" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

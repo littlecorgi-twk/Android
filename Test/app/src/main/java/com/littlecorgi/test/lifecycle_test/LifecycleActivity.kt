@@ -1,10 +1,12 @@
 package com.littlecorgi.test.lifecycle_test
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
@@ -30,6 +32,15 @@ class LifecycleActivity : AppCompatActivity() {
             toActivity<BackLifecycleActivity>(this) {
                 null
             }
+        }
+        // 测试弹出Dialog后Activity生命周期变化
+        mBinding.btnShowDialog.setOnClickListener {
+            val dialog = Dialog(this)
+            dialog.setContentView(View.inflate(this, R.layout.dialog_lifecycle, null))
+            dialog.show()
+            // 测试结果
+            // 没有 <b>任何变化</b> ，还是onResume！！！
+            // Dialog只是一个View，他又不是Activity，能影响Activity生命周期的，只能是另一个Activity！！！
         }
     }
 

@@ -54,10 +54,10 @@ class HandlerLeakMemoryActivity : AppCompatActivity() {
             // 延迟时间只要超过LeakCanary检测内存泄漏的延时即可
             handler.sendMessageDelayed(Message().apply {
                 what = MSG_POST_DELAY_MESSAGE
-            }, 1000 * 6)
+            }, 1000 * 10)
             Toast.makeText(
                 this,
-                "向Handler发送了一条6s延时的消息，在3000ms内退出当前Activity就会内存泄漏",
+                "向Handler发送了一条6s延时的消息，在10s内退出当前Activity就会内存泄漏",
                 Toast.LENGTH_SHORT
             ).show()
         }
