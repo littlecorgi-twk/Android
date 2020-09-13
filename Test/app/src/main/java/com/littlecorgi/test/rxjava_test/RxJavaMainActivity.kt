@@ -2,21 +2,17 @@ package com.littlecorgi.test.rxjava_test
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRxJavaMainBinding
-import com.littlecorgi.test.rxjava_test.network.GitHubAPI
-import com.littlecorgi.test.rxjava_test.network.PostInfo
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import com.littlecorgi.test.rxjava_test.network.RxJavaNetworkActivity
+import com.littlecorgi.test.utils.toActivity
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.ObservableOnSubscribe
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
-import io.reactivex.rxjava3.schedulers.Schedulers
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
 
 class RxJavaMainActivity : AppCompatActivity() {
 
@@ -132,39 +128,15 @@ class RxJavaMainActivity : AppCompatActivity() {
         // repeat 重复
         Observable.range(0, 3).repeat(2)
             .subscribe { t -> Log.d(TAG, "accept: repeat: $t") }
+    }
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://www.kuaidi100.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-            .build()
-
-        mBinding.btnGetGithubApi.setOnClickListener {
-            val gitHubAPI = retrofit.create(GitHubAPI::class.java)
-            val observable = gitHubAPI.getGitHubApi("yuantong", "11111111111")
-            observable.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(object : Observer<PostInfo> {
-                    override fun onSubscribe(d: Disposable?) {
-                        Log.d(TAG, "onSubscribe: ")
-                    }
-
-                    override fun onNext(t: PostInfo?) {
-                        Log.d(TAG, "onNext: ")
-                        t?.let {
-                            mBinding.textView.text = it.toString()
-                        }
-                    }
-
-                    override fun onError(e: Throwable?) {
-                        Log.d(TAG, "onError: ")
-                        e?.printStackTrace()
-                    }
-
-                    override fun onComplete() {
-                        Log.d(TAG, "onComplete: ")
-                    }
-                })
+    fun click(view: View) {
+        when (view.id) {
+            mBinding.btnToNetworkActivity.id -> {
+                toActivity<RxJavaNetworkActivity>(this) {
+                    null
+                }
+            }
         }
     }
 }
