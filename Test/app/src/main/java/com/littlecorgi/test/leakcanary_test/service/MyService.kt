@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.IBinder
 import android.util.Log
 import android.widget.Toast
+import java.util.concurrent.Executors
 
 class MyService : Service() {
 
@@ -20,11 +21,11 @@ class MyService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Toast.makeText(this, "MyService onStartCommand", Toast.LENGTH_SHORT).show()
         Log.d(TAG, "onStartCommand: 1")
-        Thread {
+        Executors.newSingleThreadExecutor().execute {
             Thread.sleep(1000)
             Log.d(TAG, "onStartCommand: stopSelf()")
             stopSelf()
-        }.start()
+        }
         return super.onStartCommand(intent, flags, startId)
     }
 

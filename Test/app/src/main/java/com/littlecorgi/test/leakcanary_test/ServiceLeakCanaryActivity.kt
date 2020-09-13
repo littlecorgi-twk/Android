@@ -49,7 +49,9 @@ class ServiceLeakCanaryActivity : AppCompatActivity() {
     public fun click(view: View) {
         when (view.id) {
             R.id.btn_start_service -> {
-                startService(Intent(this, MyService::class.java))
+                val intent = Intent(this, MyService::class.java)
+                startService(intent)
+                // stopService(intent)
             }
             R.id.btn_bind_service -> {
                 bindService(
