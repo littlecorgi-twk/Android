@@ -27,12 +27,17 @@ class BroadcastActivity : AppCompatActivity() {
                 unregisterReceiver(mCodeBroadcastReceiver)
             }
         })
+
+        LocalBroad
     }
 
     fun click(view: View) {
         when (view.id) {
             R.id.button_to_register_code_broadcast_receiver -> {
-                val intentFilter = IntentFilter("com.littlecorgi.test.CodeBroadcast")
+                val intentFilter = IntentFilter("com.littlecorgi.test.CodeBroadcast").apply {
+                    // 定义优先级
+                    priority = 100
+                }
                 registerReceiver(mCodeBroadcastReceiver, intentFilter)
             }
             R.id.button_send_code_broadcast -> {

@@ -33,7 +33,7 @@
             android:name=".broadcast_test.ManifestBroadcastReceiver"
             android:enabled="true"
             android:exported="false">
-            <intent-filter>
+            <intent-filter android:priority="100">
                 <action android:name="com.littlecorgi.test.ManifestBroadcast" />
             </intent-filter>
         </receiver>
