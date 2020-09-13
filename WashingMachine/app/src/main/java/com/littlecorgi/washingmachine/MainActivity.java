@@ -407,6 +407,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_to_new_activity).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent broadcastIntent = new Intent("com.littlecorgi.test.ManifestBroadcast");
+                broadcastIntent.setPackage("com.littlecorgi.test");
+                broadcastIntent.putExtra("test", "WashingMachine\n给你发送了一个ManifestBroadcast");
+                sendBroadcast(broadcastIntent);
                 startActivity(new Intent(MainActivity.this, SecondActivity.class));
             }
         });
