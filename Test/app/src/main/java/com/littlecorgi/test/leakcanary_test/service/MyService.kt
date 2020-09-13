@@ -8,8 +8,23 @@ import android.widget.Toast
 
 class MyService : Service() {
 
+    companion object {
+        private const val TAG = "MyService"
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        Log.d(TAG, "onCreate: 1")
+    }
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Toast.makeText(this, "MyService onStartCommand", Toast.LENGTH_SHORT).show()
+        Log.d(TAG, "onStartCommand: 1")
+        Thread {
+            Thread.sleep(1000)
+            Log.d(TAG, "onStartCommand: stopSelf()")
+            stopSelf()
+        }.start()
         return super.onStartCommand(intent, flags, startId)
     }
 
@@ -26,11 +41,18 @@ class MyService : Service() {
 
     override fun onBind(intent: Intent): IBinder {
         Toast.makeText(this, "MyService onBind", Toast.LENGTH_SHORT).show()
+        Log.d(TAG, "onBind: 1")
         return iBinder
     }
 
     override fun onUnbind(intent: Intent?): Boolean {
         Toast.makeText(this, "MyService onUnbind", Toast.LENGTH_SHORT).show()
+        Log.d(TAG, "onUnbind: 1")
         return super.onUnbind(intent)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy: 1")
     }
 }
