@@ -14,89 +14,96 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:onClick="navigationToActivity"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         tools:context=".MainActivity">
-
-        <TextView
-            android:id="@+id/activity_main_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/button_to_lifecycle_activity"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:onClick="navigationToActivity"
             android:text="ToLifecycleActivity"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@+id/button_to_event_bus_activity"
-            app:layout_constraintEnd_toEndOf="@+id/button_to_event_bus_activity"
-            app:layout_constraintStart_toStartOf="@+id/button_to_event_bus_activity"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_main_text" />
 
         <Button
             android:id="@+id/button_to_event_bus_activity"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:onClick="navigationToActivity"
             android:text="toEventBusActivity"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@+id/activity_main_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/button_to_lifecycle_activity" />
 
         <Button
             android:id="@+id/button_to_mvvm_activity"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:onClick="navigationToActivity"
             android:text="toMVVMActivity"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@+id/activity_main_text"
-            app:layout_constraintEnd_toEndOf="@+id/button_to_event_bus_activity"
-            app:layout_constraintStart_toStartOf="@+id/button_to_event_bus_activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_to_event_bus_activity" />
 
         <Button
             android:id="@+id/button_to_broadcast_activity"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:onClick="navigationToActivity"
             android:text="toBroadcastActivity"
             android:textAllCaps="false"
-            android:onClick="navigationToActivity"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/activity_main_text"
-            app:layout_constraintStart_toStartOf="@+id/activity_main_text"
-            app:layout_constraintTop_toBottomOf="@+id/activity_main_text" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_to_leakcanary_activity" />
 
         <Button
             android:id="@+id/button_to_network_activity"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:onClick="navigationToActivity"
             android:text="toNetworkActivity"
             android:textAllCaps="false"
-            android:onClick="navigationToActivity"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_to_broadcast_activity" />
 
         <Button
             android:id="@+id/button_to_leakcanary_activity"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:onClick="navigationToActivity"
             android:text="toLeakCanaryActivity"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@+id/button_to_broadcast_activity"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_main_text" />
+            app:layout_constraintTop_toBottomOf="@+id/button_to_mvvm_activity" />
+
+        <Button
+            android:id="@+id/button_to_rx_java_activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="navigationToActivity"
+            android:text="toRxJavaActivity"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_to_network_activity" />
+
+        <TextView
+            android:id="@+id/activity_main_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

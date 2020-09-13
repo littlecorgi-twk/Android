@@ -17,6 +17,7 @@ import com.littlecorgi.test.leakcanary_test.LeakCanaryActivity
 import com.littlecorgi.test.lifecycle_test.LifecycleActivity
 import com.littlecorgi.test.mvvm_test.MvvmActivity
 import com.littlecorgi.test.network_test.NetworkActivity
+import com.littlecorgi.test.rxjava_test.RxJavaMainActivity
 import com.littlecorgi.test.utils.toActivity
 
 class MainActivity : AppCompatActivity() {
@@ -77,6 +78,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.button_to_leakcanary_activity -> {
                 toActivity<LeakCanaryActivity>(this) {
+                    null
+                }
+            }
+            R.id.button_to_rx_java_activity -> {
+                toActivity<RxJavaMainActivity>(this) {
                     null
                 }
             }
