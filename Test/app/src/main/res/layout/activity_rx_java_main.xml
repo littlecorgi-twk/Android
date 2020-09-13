@@ -19,5 +19,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/btn_to_text_view_activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="click"
+            android:text="toRxJavaTextViewActivity"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_to_network_activity" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

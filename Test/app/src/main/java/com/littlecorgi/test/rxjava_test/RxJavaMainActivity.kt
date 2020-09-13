@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRxJavaMainBinding
 import com.littlecorgi.test.rxjava_test.network.RxJavaNetworkActivity
+import com.littlecorgi.test.rxjava_test.text.RxJavaTextViewActivity
 import com.littlecorgi.test.utils.toActivity
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.ObservableOnSubscribe
@@ -134,6 +135,11 @@ class RxJavaMainActivity : AppCompatActivity() {
         when (view.id) {
             mBinding.btnToNetworkActivity.id -> {
                 toActivity<RxJavaNetworkActivity>(this) {
+                    null
+                }
+            }
+            mBinding.btnToTextViewActivity.id -> {
+                toActivity<RxJavaTextViewActivity>(this) {
                     null
                 }
             }
