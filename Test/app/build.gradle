@@ -6,12 +6,12 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'com.tencent.tinker.patch'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.littlecorgi.test"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -78,6 +78,10 @@ dependencies {
     annotationProcessor("com.tencent.tinker:tinker-android-anno:$tinker_version")
     // 核心库
     implementation("com.tencent.tinker:tinker-android-lib:$tinker_version")
+
+    // multidex
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
 }
 
 kapt {
