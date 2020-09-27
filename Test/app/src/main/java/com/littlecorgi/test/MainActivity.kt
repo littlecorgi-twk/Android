@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.littlecorgi.test.broadcast_test.BroadcastActivity
+import com.littlecorgi.test.coroutine_test.CoroutineActivity
 import com.littlecorgi.test.databinding.ActivityMainBinding
 import com.littlecorgi.test.eventbus_test.EventBusActivity
 import com.littlecorgi.test.leakcanary_test.LeakCanaryActivity
@@ -83,6 +84,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.button_to_rx_java_activity -> {
                 toActivity<RxJavaMainActivity>(this) {
+                    null
+                }
+            }
+            R.id.button_to_coroutine_activity -> {
+                toActivity<CoroutineActivity>(this) {
                     null
                 }
             }

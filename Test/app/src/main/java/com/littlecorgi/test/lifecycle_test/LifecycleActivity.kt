@@ -27,7 +27,7 @@ class LifecycleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_lifecycle_test)
-        lifecycle.addObserver(LifecycleObserverTest)
+
         mBinding.buttonToBackLifecycleActivity.setOnClickListener {
             toActivity<BackLifecycleActivity>(this) {
                 null
@@ -50,6 +50,7 @@ class LifecycleActivity : AppCompatActivity() {
     }
 
     override fun onResume() {
+        lifecycle.addObserver(LifecycleObserverTest)
         super.onResume()
         Log.d(TAG, "生命周期onResume")
     }
@@ -102,6 +103,11 @@ object LifecycleObserverTest : LifecycleObserver {
     fun prepare() {
         // todo 播放器准备工作
         Log.d(TAG, "prepare: Create时播放器准备工作")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    fun test() {
+
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
