@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigationFragment">
+
+    <fragment
+        android:id="@+id/scrollerAndListFragment"
+        android:name="com.littlecorgi.test.scrolling_conflict_test.fragment.ScrollerAndListFragment"
+        android:label="fragment_scroller_and_list"
+        tools:layout="@layout/fragment_scroller_and_list">
+        <argument
+            android:name="fix_display"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigationFragment"
+        android:name="com.littlecorgi.test.scrolling_conflict_test.fragment.NavigationFragment"
+        android:label="fragment_navigation"
+        tools:layout="@layout/fragment_navigation">
+        <action
+            android:id="@+id/action_navigationFragment_to_scrollerAndListFragment"
+            app:destination="@id/scrollerAndListFragment" />
+    </fragment>
+</navigation>

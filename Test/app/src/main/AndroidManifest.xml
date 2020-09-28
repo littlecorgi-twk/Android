@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".coroutine_test.CoroutineActivity"></activity>
+        <activity android:name=".scrolling_conflict_test.ScrollingConflictActivity"></activity>
+        <activity android:name=".coroutine_test.CoroutineActivity" />
         <activity android:name=".rxjava_test.text.RxJavaTextViewActivity" />
         <activity android:name=".rxjava_test.network.RxJavaNetworkActivity" />
         <activity android:name=".rxjava_test.RxJavaMainActivity" />

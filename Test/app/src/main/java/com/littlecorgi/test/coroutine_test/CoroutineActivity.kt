@@ -8,6 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlin.concurrent.thread
 
 class CoroutineActivity : AppCompatActivity() {
 
@@ -27,6 +28,23 @@ class CoroutineActivity : AppCompatActivity() {
             uiCode2()
             ioCode3()
             uiCode3()
+        }
+
+        thread {
+            ioCode1Thread()
+            runOnUiThread {
+                uiCode1Thread()
+                thread {
+                    ioCode2Thread()
+                    runOnUiThread {
+                        uiCode2Thread()
+                        thread {
+                            ioCode3Thread()
+                            runOnUiThread { ioCode3Thread() }
+                        }
+                    }
+                }
+            }
         }
 
         // Thread {
@@ -72,5 +90,29 @@ class CoroutineActivity : AppCompatActivity() {
         withContext(Dispatchers.Main) {
             Log.d(TAG, "uiCode3: ${Thread.currentThread().name}")
         }
+    }
+
+    private fun ioCode1Thread() {
+        Log.d(TAG, "ioCode1Thread: ${Thread.currentThread().name}")
+    }
+
+    private fun ioCode2Thread() {
+        Log.d(TAG, "ioCode2Thread: ${Thread.currentThread().name}")
+    }
+
+    private fun ioCode3Thread() {
+        Log.d(TAG, "ioCode3Thread: ${Thread.currentThread().name}")
+    }
+
+    private fun uiCode1Thread() {
+        Log.d(TAG, "uiCode1Thread: ${Thread.currentThread().name}")
+    }
+
+    private fun uiCode2Thread() {
+        Log.d(TAG, "uiCode2Thread: ${Thread.currentThread().name}")
+    }
+
+    private fun uiCode3Thread() {
+        Log.d(TAG, "uiCode3Thread: ${Thread.currentThread().name}")
     }
 }

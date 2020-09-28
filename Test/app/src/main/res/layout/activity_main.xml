@@ -116,5 +116,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_to_rx_java_activity" />
 
+        <Button
+            android:id="@+id/button_to_scrolling_conflict_activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="navigationToActivity"
+            android:text="toScrollingConflictActivity"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_to_coroutine_activity" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

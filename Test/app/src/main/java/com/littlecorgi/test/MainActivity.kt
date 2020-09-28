@@ -19,6 +19,7 @@ import com.littlecorgi.test.lifecycle_test.LifecycleActivity
 import com.littlecorgi.test.mvvm_test.MvvmActivity
 import com.littlecorgi.test.network_test.NetworkActivity
 import com.littlecorgi.test.rxjava_test.RxJavaMainActivity
+import com.littlecorgi.test.scrolling_conflict_test.ScrollingConflictActivity
 import com.littlecorgi.test.utils.toActivity
 
 class MainActivity : AppCompatActivity() {
@@ -89,6 +90,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.button_to_coroutine_activity -> {
                 toActivity<CoroutineActivity>(this) {
+                    null
+                }
+            }
+            R.id.button_to_scrolling_conflict_activity -> {
+                toActivity<ScrollingConflictActivity>(this) {
                     null
                 }
             }
