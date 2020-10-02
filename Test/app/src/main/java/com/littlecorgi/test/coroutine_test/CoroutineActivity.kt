@@ -8,7 +8,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlin.concurrent.thread
 
 class CoroutineActivity : AppCompatActivity() {
 
@@ -20,7 +19,9 @@ class CoroutineActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutine)
 
-        GlobalScope.launch {
+        // 通过协程去实现UI和IO交替调用
+        // GlobalScope默认在子线程中调用，但是我们可以通过Dispatcher指定GlobalScope中代码执行的线程
+        GlobalScope.launch(Dispatchers.Main) {
             Log.d(TAG, "onCreate: Coroutine launch globeScope ${Thread.currentThread().name}")
             ioCode1()
             uiCode1()
@@ -30,22 +31,23 @@ class CoroutineActivity : AppCompatActivity() {
             uiCode3()
         }
 
-        thread {
-            ioCode1Thread()
-            runOnUiThread {
-                uiCode1Thread()
-                thread {
-                    ioCode2Thread()
-                    runOnUiThread {
-                        uiCode2Thread()
-                        thread {
-                            ioCode3Thread()
-                            runOnUiThread { ioCode3Thread() }
-                        }
-                    }
-                }
-            }
-        }
+        // // 通过线程实现UI和IO交替调用
+        // thread {
+        //     ioCode1Thread()
+        //     runOnUiThread {
+        //         uiCode1Thread()
+        //         thread {
+        //             ioCode2Thread()
+        //             runOnUiThread {
+        //                 uiCode2Thread()
+        //                 thread {
+        //                     ioCode3Thread()
+        //                     runOnUiThread { uiCode3Thread() }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
 
         // Thread {
         //     Log.d(TAG, "onCreate: Thread launch globeScope ${Thread.currentThread().name}")
@@ -56,41 +58,35 @@ class CoroutineActivity : AppCompatActivity() {
         // }
     }
 
-    private suspend fun ioCode1() {
-        withContext(Dispatchers.IO) {
-            Log.d(TAG, "ioCode1: ${Thread.currentThread().name}")
-        }
+    private suspend fun ioCode1() = withContext(Dispatchers.IO) {
+        Log.d(TAG, "ioCode1: ${Thread.currentThread().name}")
     }
 
-    private suspend fun ioCode2() {
-        withContext(Dispatchers.IO) {
-            Log.d(TAG, "ioCode2: ${Thread.currentThread().name}")
-        }
+
+    private suspend fun ioCode2() = withContext(Dispatchers.IO) {
+        Log.d(TAG, "ioCode2: ${Thread.currentThread().name}")
     }
 
-    private suspend fun ioCode3() {
-        withContext(Dispatchers.IO) {
-            Log.d(TAG, "ioCode3: ${Thread.currentThread().name}")
-        }
+
+    private suspend fun ioCode3() = withContext(Dispatchers.IO) {
+        Log.d(TAG, "ioCode3: ${Thread.currentThread().name}")
     }
 
-    private suspend fun uiCode1() {
-        withContext(Dispatchers.Main) {
-            Log.d(TAG, "uiCode1: ${Thread.currentThread().name}")
-        }
+
+    private suspend fun uiCode1() = withContext(Dispatchers.Main) {
+        Log.d(TAG, "uiCode1: ${Thread.currentThread().name}")
     }
 
-    private suspend fun uiCode2() {
-        withContext(Dispatchers.Main) {
-            Log.d(TAG, "uiCode2: ${Thread.currentThread().name}")
-        }
+
+    private suspend fun uiCode2() = withContext(Dispatchers.Main) {
+        Log.d(TAG, "uiCode2: ${Thread.currentThread().name}")
     }
 
-    private suspend fun uiCode3() {
-        withContext(Dispatchers.Main) {
-            Log.d(TAG, "uiCode3: ${Thread.currentThread().name}")
-        }
+
+    private suspend fun uiCode3() = withContext(Dispatchers.Main) {
+        Log.d(TAG, "uiCode3: ${Thread.currentThread().name}")
     }
+
 
     private fun ioCode1Thread() {
         Log.d(TAG, "ioCode1Thread: ${Thread.currentThread().name}")
