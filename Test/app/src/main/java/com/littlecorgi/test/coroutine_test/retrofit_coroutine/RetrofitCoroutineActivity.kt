@@ -8,10 +8,6 @@ import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRetrofitCoroutineBinding
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -94,7 +90,7 @@ class RetrofitCoroutineActivity : AppCompatActivity() {
             })*/
 
         // 使用Kotlin协程实现
-        GlobalScope.launch(Dispatchers.Main) {
+        /*GlobalScope.launch(Dispatchers.Main) {
             try {
                 val asyncRengwuxian = async { api.listReposKt("rengwuxian") } // 后台，通过async来并发
                 val asyncGoogle = async { api.listReposKt("google") } // 后台，通过async来并发
@@ -104,7 +100,7 @@ class RetrofitCoroutineActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 mBinding.textView.text = e.message
             }
-        }
+        }*/
 
         // job代表一个协程，我们可以调用他的cancel()方法去取消这个协程的执行
         /*val job = GlobalScope.launch(Dispatchers.IO) {
