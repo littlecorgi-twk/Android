@@ -3,7 +3,11 @@ package com.littlecorgi.test.coroutine_test
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.littlecorgi.test.R
+import com.littlecorgi.test.coroutine_test.retrofit_coroutine.RetrofitCoroutineActivity
+import com.littlecorgi.test.databinding.ActivityCoroutineBinding
+import com.littlecorgi.test.utils.toActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -15,9 +19,17 @@ class CoroutineActivity : AppCompatActivity() {
         private const val TAG = "CoroutineActivity"
     }
 
+    private lateinit var mBinding: ActivityCoroutineBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_coroutine)
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_coroutine)
+
+        mBinding.btnToRetrofitCoroutineActivity.setOnClickListener {
+            toActivity<RetrofitCoroutineActivity>(this) {
+                null
+            }
+        }
 
         // 通过协程去实现UI和IO交替调用
         // GlobalScope默认在子线程中调用，但是我们可以通过Dispatcher指定GlobalScope中代码执行的线程

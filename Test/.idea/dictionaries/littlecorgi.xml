@@ -2,6 +2,7 @@
   <dictionary name="littlecorgi">
     <words>
       <w>eventbus</w>
+      <w>gravatar</w>
       <w>jetpack</w>
       <w>kapt</w>
       <w>leakcanary</w>
@@ -10,7 +11,9 @@
       <w>multidex</w>
       <w>mvvm</w>
       <w>okhttp</w>
+      <w>rengwuxian</w>
       <w>rxjava</w>
+      <w>spdx</w>
     </words>
   </dictionary>
 </component>
