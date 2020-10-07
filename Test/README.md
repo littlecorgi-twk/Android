@@ -7,6 +7,9 @@
 - 静态注册广播接收器，然后发送显示广播（收到）  
 - 动态注册广播接收器，发送广播
 
+## CoroutineTest
+Kotlin协程学习。主要是跟随扔物线腾讯课堂视频学习时的代码。
+
 ## CustomView
 自定义View
 - FlowLayout：流式布局  
@@ -16,6 +19,10 @@
 EventBus相关测试：
 - EventBus用法
 - EventBus粘性事件
+
+## KoinTest
+学习Koin：
+- Koin的基础用法
 
 ## LeakCanaryTest
 通过LeakCanary检测内存泄漏测试：
@@ -32,3 +39,15 @@ EventBus相关测试：
 ## MVVMTest
 Jetpack实现MVVM
 - LiveData和ViewModel的基本使用
+
+## NetworkTest
+Android中的网络通信实现：
+- OkHttp
+- Retrofit
+
+## RxJavaTest
+RxJava
+
+## ScrollingConflictTest
+滑动冲突测试：
+- ScrollView中嵌套ListView
