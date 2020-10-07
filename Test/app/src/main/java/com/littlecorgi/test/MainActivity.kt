@@ -14,6 +14,7 @@ import com.littlecorgi.test.broadcast_test.BroadcastActivity
 import com.littlecorgi.test.coroutine_test.CoroutineActivity
 import com.littlecorgi.test.databinding.ActivityMainBinding
 import com.littlecorgi.test.eventbus_test.EventBusActivity
+import com.littlecorgi.test.koin_test.KoinActivity
 import com.littlecorgi.test.leakcanary_test.LeakCanaryActivity
 import com.littlecorgi.test.lifecycle_test.LifecycleActivity
 import com.littlecorgi.test.mvvm_test.MvvmActivity
@@ -95,6 +96,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.button_to_scrolling_conflict_activity -> {
                 toActivity<ScrollingConflictActivity>(this) {
+                    null
+                }
+            }
+            R.id.button_to_koin_activity -> {
+                toActivity<KoinActivity>(this) {
                     null
                 }
             }

@@ -1,6 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext.kotlin_version = "1.4.10"
+    ext.koin_version = "2.2.0-rc-1"
+    ext.nav_version = "2.3.0-alpha01"
     repositories {
         google()
         jcenter()
@@ -9,11 +11,12 @@ buildscript {
         // 由于Tinker不支持4.0.1 所以降级到3.5.3 具体情况见此处
         // https://github.com/Tencent/tinker/issues/1357
         // 傻逼tinker，爷不集成了
-        classpath "com.android.tools.build:gradle:4.0.1"
+        classpath 'com.android.tools.build:gradle:4.2.0-alpha13'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
-        def nav_version = "2.3.0-alpha01"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+
+        classpath "org.koin:koin-gradle-plugin:$koin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -30,3 +33,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+apply plugin: 'koin'
