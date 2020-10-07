@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.littlecorgi.test.mvvm_test.model.Repository
 
-class MvvmViewModel : ViewModel() {
+class MvvmViewModel(private val rep: Repository) : ViewModel() {
 
     private val _count = MutableLiveData(0)
     val count: LiveData<Int>
@@ -20,10 +20,10 @@ class MvvmViewModel : ViewModel() {
     }
 
     fun saveCount() {
-        Repository.saveCountToSharedPreferences(_count.value ?: 0)
+        rep.saveCountToSharedPreferences(_count.value ?: 0)
     }
 
     fun loadCount() {
-        _count.value = Repository.getCountFromSharedPreferences()
+        _count.value = rep.getCountFromSharedPreferences()
     }
 }

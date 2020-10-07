@@ -5,9 +5,12 @@ import android.content.Context
 import com.littlecorgi.test.koin_test.HelloRepository
 import com.littlecorgi.test.koin_test.HelloRepositoryImpl
 import com.littlecorgi.test.koin_test.MySimplePresenter
+import com.littlecorgi.test.mvvm_test.model.Repository
+import com.littlecorgi.test.mvvm_test.viewmodel.MvvmViewModel
 import org.greenrobot.eventbus.EventBus
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 
@@ -28,6 +31,13 @@ class MyApplication : Application() {
         // single { MySimplePresenter(get()) }
     }
 
+    val mvvmModule = module {
+        // 使用single定义Repository依赖
+        single { Repository }
+        // 定义ViewModel
+        viewModel { MvvmViewModel(get()) }
+    }
+
     override fun onCreate() {
         super.onCreate()
         context = this
@@ -41,7 +51,9 @@ class MyApplication : Application() {
             // 设置AndroidContext
             androidContext(this@MyApplication)
             // 注册模块
-            modules(appModule)
+            // modules(appModule)
+            // modules(mvvmModule)
+            modules(listOf(appModule, mvvmModule))
         }
     }
 }
