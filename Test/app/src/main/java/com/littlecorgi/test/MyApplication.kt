@@ -31,7 +31,7 @@ class MyApplication : Application() {
         // single { MySimplePresenter(get()) }
     }
 
-    val mvvmModule = module {
+    private val mvvmModule = module {
         // 使用single定义Repository依赖
         single { Repository }
         // 定义ViewModel
