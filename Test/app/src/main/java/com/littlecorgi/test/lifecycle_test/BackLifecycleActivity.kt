@@ -1,12 +1,12 @@
 package com.littlecorgi.test.lifecycle_test
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityBackLifecycleBinding
 
-class BackLifecycleActivity : AppCompatActivity() {
+class BackLifecycleActivity : BaseActivity() {
 
     private lateinit var mBinding: ActivityBackLifecycleBinding
 

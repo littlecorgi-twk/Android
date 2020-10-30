@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRxJavaTextViewBinding
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.ObservableOnSubscribe
 
-class RxJavaTextViewActivity : AppCompatActivity() {
+class RxJavaTextViewActivity : BaseActivity() {
 
     companion object {
         private const val TAG = "RxJavaTextViewActivity"

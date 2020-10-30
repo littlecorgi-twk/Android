@@ -4,13 +4,13 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityBroadcastLeakCanaryBinding
 import com.littlecorgi.test.leakcanary_test.broadcast.MyReceiver
 
-class BroadcastLeakCanaryActivity : AppCompatActivity() {
+class BroadcastLeakCanaryActivity : BaseActivity() {
 
     companion object {
         private const val BroadcastAction = "com.littlecorgi.test.leakcanary_test.broadcast"

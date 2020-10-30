@@ -6,6 +6,7 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url 'https://dl.bintray.com/umsdk/release' }
     }
     dependencies {
         // 由于Tinker不支持4.0.1 所以降级到3.5.3 具体情况见此处
@@ -27,6 +28,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://dl.bintray.com/umsdk/release' }
     }
 }
 

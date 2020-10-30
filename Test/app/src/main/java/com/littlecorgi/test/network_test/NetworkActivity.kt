@@ -1,15 +1,15 @@
 package com.littlecorgi.test.network_test
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityNetworkBinding
 import com.littlecorgi.test.network_test.okhttp.OkHttpActivity
 import com.littlecorgi.test.network_test.retrofit.RetrofitActivity
 import com.littlecorgi.test.utils.toActivity
 
-class NetworkActivity : AppCompatActivity() {
+class NetworkActivity : BaseActivity() {
 
     private lateinit var mBinding: ActivityNetworkBinding
 

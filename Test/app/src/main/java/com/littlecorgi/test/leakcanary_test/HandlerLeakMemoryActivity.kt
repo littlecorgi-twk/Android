@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityHandlerLeakMemoryBinding
 
@@ -20,7 +20,7 @@ import com.littlecorgi.test.databinding.ActivityHandlerLeakMemoryBinding
  *      进入该Activity，然后点击按钮，然后立马退出即可
  * @author littlecorgi 2020-08-26 17:17:44
  */
-class HandlerLeakMemoryActivity : AppCompatActivity() {
+class HandlerLeakMemoryActivity : BaseActivity() {
 
     companion object {
         private const val MSG_POST_DELAY_MESSAGE = 101

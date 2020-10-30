@@ -3,12 +3,13 @@ package com.littlecorgi.test.eventbus_test
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.eventbus_test.event.TestEvent
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-open class BaseEventBusActivity : AppCompatActivity() {
+open class BaseEventBusActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base_event_bus)

@@ -2,8 +2,8 @@ package com.littlecorgi.test.rxjava_test.network
 
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRxJavaNetworkBinding
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -14,7 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RxJavaNetworkActivity : AppCompatActivity() {
+class RxJavaNetworkActivity : BaseActivity() {
 
     companion object {
         private const val TAG = "RxJavaNetworkActivity"

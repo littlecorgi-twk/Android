@@ -7,15 +7,15 @@ import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityServiceLeakCanaryBinding
 import com.littlecorgi.test.leakcanary_test.service.ICallbackInterface
 import com.littlecorgi.test.leakcanary_test.service.IManagerInterface
 import com.littlecorgi.test.leakcanary_test.service.MyService
 
-class ServiceLeakCanaryActivity : AppCompatActivity() {
+class ServiceLeakCanaryActivity : BaseActivity() {
 
     companion object {
         private const val TAG = "ServiceLeakCanary"

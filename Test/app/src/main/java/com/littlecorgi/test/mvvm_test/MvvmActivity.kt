@@ -2,18 +2,18 @@ package com.littlecorgi.test.mvvm_test
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.Observer
 import androidx.lifecycle.OnLifecycleEvent
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityMvvmBinding
 import com.littlecorgi.test.mvvm_test.viewmodel.MvvmViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MvvmActivity : AppCompatActivity() {
+class MvvmActivity : BaseActivity() {
 
     // 通过Koin的 by viewModel() 来注入依赖
     private val mViewModel: MvvmViewModel by viewModel()

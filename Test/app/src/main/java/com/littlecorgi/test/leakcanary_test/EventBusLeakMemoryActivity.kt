@@ -1,8 +1,8 @@
 package com.littlecorgi.test.leakcanary_test
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityEventBusLeakMemoryBinding
 import com.littlecorgi.test.eventbus_test.event.TestEvent
@@ -18,7 +18,7 @@ import org.greenrobot.eventbus.Subscribe
  *
  * @author littlecorgi 2020-08-26 17:17:12
  */
-class EventBusLeakMemoryActivity : AppCompatActivity() {
+class EventBusLeakMemoryActivity : BaseActivity() {
 
     private lateinit var mBinding: ActivityEventBusLeakMemoryBinding
 

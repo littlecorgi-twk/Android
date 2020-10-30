@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityKoinBinding
 import org.koin.android.ext.android.inject
 
-class KoinActivity : AppCompatActivity() {
+class KoinActivity : BaseActivity() {
 
     // Lazy injected MySimplePresenter
     // 延迟注入MySimplePresenter

@@ -3,8 +3,8 @@ package com.littlecorgi.test.rxjava_test
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRxJavaMainBinding
 import com.littlecorgi.test.rxjava_test.network.RxJavaNetworkActivity
@@ -15,7 +15,7 @@ import io.reactivex.rxjava3.core.ObservableOnSubscribe
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 
-class RxJavaMainActivity : AppCompatActivity() {
+class RxJavaMainActivity : BaseActivity() {
 
     companion object {
         private const val TAG = "RxJavaMainActivity"

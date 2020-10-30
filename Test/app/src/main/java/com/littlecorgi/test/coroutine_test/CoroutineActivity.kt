@@ -2,8 +2,8 @@ package com.littlecorgi.test.coroutine_test
 
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.coroutine_test.retrofit_coroutine.RetrofitCoroutineActivity
 import com.littlecorgi.test.databinding.ActivityCoroutineBinding
@@ -13,7 +13,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CoroutineActivity : AppCompatActivity() {
+class CoroutineActivity : BaseActivity() {
 
     companion object {
         private const val TAG = "CoroutineActivity"

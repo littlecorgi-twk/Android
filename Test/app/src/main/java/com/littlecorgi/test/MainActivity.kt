@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.littlecorgi.test.broadcast_test.BroadcastActivity
 import com.littlecorgi.test.coroutine_test.CoroutineActivity
@@ -23,7 +22,7 @@ import com.littlecorgi.test.rxjava_test.RxJavaMainActivity
 import com.littlecorgi.test.scrolling_conflict_test.ScrollingConflictActivity
 import com.littlecorgi.test.utils.toActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
 

@@ -1,9 +1,9 @@
 package com.littlecorgi.test.coroutine_test.retrofit_coroutine
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRetrofitCoroutineBinding
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -12,7 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitCoroutineActivity : AppCompatActivity() {
+class RetrofitCoroutineActivity : BaseActivity() {
 
     private lateinit var mBinding: ActivityRetrofitCoroutineBinding
 

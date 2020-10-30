@@ -16,11 +16,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
+import com.littlecorgi.test.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityBroadcastBinding
 
 
-class BroadcastActivity : AppCompatActivity() {
+class BroadcastActivity : BaseActivity() {
 
     private lateinit var mBinding: ActivityBroadcastBinding
 
