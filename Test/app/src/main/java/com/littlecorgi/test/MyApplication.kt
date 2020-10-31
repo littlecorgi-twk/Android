@@ -11,6 +11,7 @@ import com.littlecorgi.test.mvvm_test.viewmodel.MvvmViewModel
 import com.umeng.commonsdk.UMConfigure
 import com.umeng.message.IUmengRegisterCallback
 import com.umeng.message.PushAgent
+import com.umeng.message.inapp.InAppMessageManager
 import org.greenrobot.eventbus.EventBus
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -73,7 +74,11 @@ class MyApplication : Application() {
         // 获取消息推送代理示例
         val mPushAgent = PushAgent.getInstance(context)
 
-        mPushAgent.isPushCheck = true;
+        // PushSDK自检
+        mPushAgent.isPushCheck = true
+
+        // 应用内消息测试模式，线上时注释掉此代码
+        InAppMessageManager.getInstance(context).setInAppMsgDebugMode(true)
 
         // mPushAgent.setNotificationPlaySound(MsgConstant.NOTIFICATION_PLAY_SERVER); //服务端控制声音
 
