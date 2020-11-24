@@ -5,18 +5,17 @@ apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
 
     defaultConfig {
         applicationId "com.littlecorgi.test"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
     }
 
     buildTypes {
@@ -28,7 +27,7 @@ android {
     // Error: DSL element 'android.dataBinding.enabled' is obsolete and has been replaced with 'android.buildFeatures.dataBinding'.
     //        It will be removed in version 5.0 of the Android Gradle plugin.
     // Solution: https://my.oschina.net/u/4352984/blog/4318365
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
         // for view binding :
         // viewBinding = true
@@ -50,15 +49,10 @@ dependencies {
     implementation project(':common')
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    testImplementation 'junit:junit:4.13.1'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    // kapt
-    // EventBus
-    kapt "org.greenrobot:eventbus-annotation-processor:3.2.0"
-    // glide
-    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    // 注解处理器
+    kapt rootProject.ext.dependencies["GlideAPT"]
+    kapt rootProject.ext.dependencies["EventBusAPT"]
 
 //
 //    def lifecycle_version = "2.2.0"
@@ -125,5 +119,7 @@ kapt {
     arguments {
         // EventBus的kapt
         arg('eventBusIndex', 'com.littlecorgi.test.MyEventBusIndex')
+        // ARouter-Kotlin
+        arg("AROUTER_MODULE_NAME", project.getName())
     }
 }
