@@ -1,8 +1,9 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-apply plugin: "androidx.navigation.safeargs"
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id "androidx.navigation.safeargs"
+}
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
@@ -42,17 +43,24 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation rootProject.ext.dependencies["Junit"]
+    androidTestImplementation rootProject.ext.dependencies["TestExtJunit"]
+    androidTestImplementation rootProject.ext.dependencies["EspressoCore"]
 
     implementation project(':common')
-
-    implementation fileTree(dir: "libs", include: ["*.jar"])
 
     // 注解处理器
     kapt rootProject.ext.dependencies["GlideAPT"]
     kapt rootProject.ext.dependencies["EventBusAPT"]
+    kapt rootProject.ext.dependencies["ARouterAPT"]
+    kapt rootProject.ext.dependencies["HiltAPT"]
 
 //
 //    def lifecycle_version = "2.2.0"

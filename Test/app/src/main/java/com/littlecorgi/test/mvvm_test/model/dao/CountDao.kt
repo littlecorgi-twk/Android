@@ -1,7 +1,7 @@
 package com.littlecorgi.test.mvvm_test.model.dao
 
 import android.content.Context
-import com.littlecorgi.test.MyApplication
+import com.littlecorgi.common.MyApplication
 
 object CountDao {
 

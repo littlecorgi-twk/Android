@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Message
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityHandlerLeakMemoryBinding
 

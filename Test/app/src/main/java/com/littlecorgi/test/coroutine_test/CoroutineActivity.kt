@@ -3,11 +3,11 @@ package com.littlecorgi.test.coroutine_test
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.coroutine_test.retrofit_coroutine.RetrofitCoroutineActivity
 import com.littlecorgi.test.databinding.ActivityCoroutineBinding
-import com.littlecorgi.test.utils.toActivity
+import com.littlecorgi.common.utils.toActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRxJavaMainBinding
 import com.littlecorgi.test.rxjava_test.network.RxJavaNetworkActivity
 import com.littlecorgi.test.rxjava_test.text.RxJavaTextViewActivity
-import com.littlecorgi.test.utils.toActivity
+import com.littlecorgi.common.utils.toActivity
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.ObservableOnSubscribe
 import io.reactivex.rxjava3.core.Observer

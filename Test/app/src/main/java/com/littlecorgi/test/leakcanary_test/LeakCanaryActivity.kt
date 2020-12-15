@@ -2,10 +2,10 @@ package com.littlecorgi.test.leakcanary_test
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityLeakCanaryBinding
-import com.littlecorgi.test.utils.toActivity
+import com.littlecorgi.common.utils.toActivity
 
 class LeakCanaryActivity : BaseActivity() {
 

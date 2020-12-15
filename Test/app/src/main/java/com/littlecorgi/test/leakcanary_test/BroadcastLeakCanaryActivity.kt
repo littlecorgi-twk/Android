@@ -5,7 +5,7 @@ import android.content.IntentFilter
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityBroadcastLeakCanaryBinding
 import com.littlecorgi.test.leakcanary_test.broadcast.MyReceiver

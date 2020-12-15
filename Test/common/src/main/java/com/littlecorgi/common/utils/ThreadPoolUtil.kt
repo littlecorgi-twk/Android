@@ -1,4 +1,4 @@
-package com.littlecorgi.test.utils
+package com.littlecorgi.common.utils
 
 import android.util.Log
 import java.util.concurrent.*

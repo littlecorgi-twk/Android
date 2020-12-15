@@ -18,7 +18,7 @@
     <!-- 以下为需要的基本权限，需要自行添加至您的AndroidManifest文件中 end-->
 
     <application
-        android:name=".MyApplication"
+        android:name=".AppApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

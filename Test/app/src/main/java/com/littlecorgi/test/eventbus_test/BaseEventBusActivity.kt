@@ -2,8 +2,7 @@ package com.littlecorgi.test.eventbus_test
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.eventbus_test.event.TestEvent
 import org.greenrobot.eventbus.Subscribe

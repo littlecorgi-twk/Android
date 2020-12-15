@@ -1,65 +1,32 @@
-package com.littlecorgi.test
+package com.littlecorgi.common
 
 import android.app.Application
 import android.content.Context
 import android.util.Log
-import com.littlecorgi.test.koin_test.HelloRepository
-import com.littlecorgi.test.koin_test.HelloRepositoryImpl
-import com.littlecorgi.test.koin_test.MySimplePresenter
-import com.littlecorgi.test.mvvm_test.model.Repository
-import com.littlecorgi.test.mvvm_test.viewmodel.MvvmViewModel
 import com.umeng.commonsdk.UMConfigure
 import com.umeng.message.IUmengRegisterCallback
 import com.umeng.message.PushAgent
 import com.umeng.message.inapp.InAppMessageManager
-import org.greenrobot.eventbus.EventBus
-import org.koin.android.ext.koin.androidContext
-import org.koin.android.ext.koin.androidLogger
-import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.core.context.startKoin
-import org.koin.dsl.module
+import dagger.hilt.android.HiltAndroidApp
 
-class MyApplication : Application() {
+/**
+ * HiltAndroidApp:
+ *  生成的这一 Hilt 组件会附加到 Application 对象的生命周期，并为其提供依赖项。
+ *  此外，它也是应用的父组件，这意味着，其他组件可以访问它提供的依赖项。
+ * @author littlecorgi 2020/10/30
+ */
+@HiltAndroidApp
+open class MyApplication : Application() {
 
     companion object {
         lateinit var context: Context
-    }
-
-    private val appModule = module {
-        // single instance of HelloRepository
-        // 使用Single对HelloRepository进行标注，提供依赖，表示这是一个单例
-        single<HelloRepository> { HelloRepositoryImpl() }
-
-        // Simple Presenter Factory
-        // 使用factory对MySimplePresenter进行标注，类似于single，也是用来提供依赖的，但是区别是他不是单例
-        factory { MySimplePresenter(get()) }
-        // single { MySimplePresenter(get()) }
-    }
-
-    private val mvvmModule = module {
-        // 使用single定义Repository依赖
-        single { Repository }
-        // 定义ViewModel
-        viewModel { MvvmViewModel(get()) }
     }
 
     override fun onCreate() {
         super.onCreate()
         context = this
         // val eventBus = EventBus.builder().addIndex(MyEventBusIndex()).build()
-        EventBus.builder().addIndex(MyEventBusIndex()).installDefaultEventBus()
-
-        // Start Koin
-        startKoin {
-            // 打印日志
-            androidLogger()
-            // 设置AndroidContext
-            androidContext(this@MyApplication)
-            // 注册模块
-            // modules(appModule)
-            // modules(mvvmModule)
-            modules(listOf(appModule, mvvmModule))
-        }
+        // EventBus.builder().addIndex(MyEventBusIndex()).installDefaultEventBus()
 
         // 在此处调用基础组件包提供的初始化函数 相应信息可在应用管理 -> 应用信息 中找到 http://message.umeng.com/list/apps
         // 参数一：当前上下文context；

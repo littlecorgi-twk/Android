@@ -2,7 +2,7 @@ package com.littlecorgi.test.lifecycle_test
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityBackLifecycleBinding
 

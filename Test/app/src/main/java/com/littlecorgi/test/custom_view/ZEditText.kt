@@ -17,7 +17,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputConnection
 import android.view.inputmethod.InputMethodManager
 import com.littlecorgi.test.R
-import com.littlecorgi.test.utils.DensityUtils
+import com.littlecorgi.common.utils.DensityUtils
 
 /**
  * 模拟密码输入框

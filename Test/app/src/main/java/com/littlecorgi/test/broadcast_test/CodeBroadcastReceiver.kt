@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
-import com.littlecorgi.test.MyApplication
+import com.littlecorgi.common.MyApplication
 
 class CodeBroadcastReceiver : BroadcastReceiver() {
 

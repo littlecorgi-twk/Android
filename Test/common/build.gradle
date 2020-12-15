@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id "androidx.navigation.safeargs"
+    id "dagger.hilt.android.plugin"
 }
 
 android {
@@ -40,9 +41,9 @@ android {
 }
 
 dependencies {
-    testApi rootProject.ext.dependencies["Junit"]
-    androidTestApi rootProject.ext.dependencies["TestExtJunit"]
-    androidTestApi rootProject.ext.dependencies["EspressoCore"]
+    testImplementation rootProject.ext.dependencies["Junit"]
+    androidTestImplementation rootProject.ext.dependencies["TestExtJunit"]
+    androidTestImplementation rootProject.ext.dependencies["EspressoCore"]
     api rootProject.ext.dependencies["KotlinStdlib"]
     api rootProject.ext.dependencies["CoreKtx"]
     api rootProject.ext.dependencies["AppCompat"]
@@ -58,6 +59,8 @@ dependencies {
     // navigation
     api rootProject.ext.dependencies["NavigationFragmentKtx"]
     api rootProject.ext.dependencies["NavigationUIKtx"]
+    // hilt
+    api rootProject.ext.dependencies["Hilt"]
 
     // EventBus 和 EventBus的kapt
     api rootProject.ext.dependencies["EventBus"]
@@ -92,13 +95,14 @@ dependencies {
     // 注解处理器
     kapt rootProject.ext.dependencies["GlideAPT"]
     kapt rootProject.ext.dependencies["EventBusAPT"]
-    kapt rootProject.ext.dependencies["ARouterCompiler"]
+    kapt rootProject.ext.dependencies["ARouterAPT"]
+    kapt rootProject.ext.dependencies["HiltAPT"]
 }
 
 kapt {
     arguments {
         // EventBus的kapt
-        arg('eventBusIndex', 'com.littlecorgi.common.MyEventBusIndex')
+//        arg('eventBusIndex', 'com.littlecorgi.common.MyEventBusIndex')
         // ARouter-Kotlin
         arg("AROUTER_MODULE_NAME", project.getName())
     }

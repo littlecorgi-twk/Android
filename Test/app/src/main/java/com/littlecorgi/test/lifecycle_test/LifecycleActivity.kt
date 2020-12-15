@@ -11,10 +11,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityLifecycleTestBinding
-import com.littlecorgi.test.utils.toActivity
+import com.littlecorgi.common.utils.toActivity
 
 class LifecycleActivity : BaseActivity() {
 

@@ -5,7 +5,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import androidx.databinding.DataBindingUtil
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRxJavaTextViewBinding
 import io.reactivex.rxjava3.core.Observable

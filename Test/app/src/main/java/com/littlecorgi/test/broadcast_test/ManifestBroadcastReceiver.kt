@@ -10,7 +10,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
-import com.littlecorgi.test.MyApplication
+import com.littlecorgi.common.MyApplication
 import com.littlecorgi.test.R
 
 

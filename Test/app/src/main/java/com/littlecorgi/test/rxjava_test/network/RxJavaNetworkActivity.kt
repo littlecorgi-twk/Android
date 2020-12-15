@@ -3,7 +3,7 @@ package com.littlecorgi.test.rxjava_test.network
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRxJavaNetworkBinding
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers

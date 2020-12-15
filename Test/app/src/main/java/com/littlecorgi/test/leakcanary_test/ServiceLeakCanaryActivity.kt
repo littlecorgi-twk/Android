@@ -8,7 +8,7 @@ import android.os.IBinder
 import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityServiceLeakCanaryBinding
 import com.littlecorgi.test.leakcanary_test.service.ICallbackInterface

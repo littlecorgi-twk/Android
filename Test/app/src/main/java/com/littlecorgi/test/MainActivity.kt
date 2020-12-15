@@ -9,6 +9,8 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import com.littlecorgi.common.BaseActivity
+import com.littlecorgi.common.utils.toActivity
 import com.littlecorgi.test.broadcast_test.BroadcastActivity
 import com.littlecorgi.test.coroutine_test.CoroutineActivity
 import com.littlecorgi.test.databinding.ActivityMainBinding
@@ -20,7 +22,6 @@ import com.littlecorgi.test.mvvm_test.MvvmActivity
 import com.littlecorgi.test.network_test.NetworkActivity
 import com.littlecorgi.test.rxjava_test.RxJavaMainActivity
 import com.littlecorgi.test.scrolling_conflict_test.ScrollingConflictActivity
-import com.littlecorgi.test.utils.toActivity
 
 class MainActivity : BaseActivity() {
 

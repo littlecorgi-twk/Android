@@ -1,10 +1,10 @@
-package com.littlecorgi.test.utils
+package com.littlecorgi.common.utils
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.littlecorgi.test.utils.LiveDataBus.ObserverWrapper
+import com.littlecorgi.common.utils.LiveDataBus.ObserverWrapper
 import java.lang.reflect.Field
 import java.lang.reflect.Method
 

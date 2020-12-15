@@ -3,7 +3,7 @@ package com.littlecorgi.test.coroutine_test.retrofit_coroutine
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
-import com.littlecorgi.test.BaseActivity
+import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRetrofitCoroutineBinding
 import io.reactivex.rxjava3.disposables.CompositeDisposable
