@@ -6,6 +6,7 @@ import com.littlecorgi.test.koin_test.HelloRepositoryImpl
 import com.littlecorgi.test.koin_test.MySimplePresenter
 import com.littlecorgi.test.mvvm_test.model.Repository
 import com.littlecorgi.test.mvvm_test.viewmodel.MvvmViewModel
+import dagger.hilt.android.HiltAndroidApp
 import org.greenrobot.eventbus.EventBus
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -17,6 +18,7 @@ import org.koin.dsl.module
  *
  * @author littlecorgi 2020/11/24
  */
+@HiltAndroidApp
 class AppApplication : MyApplication() {
 
     private val appModule = module {

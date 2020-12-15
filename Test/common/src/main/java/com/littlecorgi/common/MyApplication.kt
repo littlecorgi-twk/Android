@@ -7,7 +7,6 @@ import com.umeng.commonsdk.UMConfigure
 import com.umeng.message.IUmengRegisterCallback
 import com.umeng.message.PushAgent
 import com.umeng.message.inapp.InAppMessageManager
-import dagger.hilt.android.HiltAndroidApp
 
 /**
  * HiltAndroidApp:
@@ -15,7 +14,6 @@ import dagger.hilt.android.HiltAndroidApp
  *  此外，它也是应用的父组件，这意味着，其他组件可以访问它提供的依赖项。
  * @author littlecorgi 2020/10/30
  */
-@HiltAndroidApp
 open class MyApplication : Application() {
 
     companion object {

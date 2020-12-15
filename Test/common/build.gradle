@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id "androidx.navigation.safeargs"
-    id "dagger.hilt.android.plugin"
+//    id "dagger.hilt.android.plugin"
 }
 
 android {
@@ -60,7 +60,7 @@ dependencies {
     api rootProject.ext.dependencies["NavigationFragmentKtx"]
     api rootProject.ext.dependencies["NavigationUIKtx"]
     // hilt
-    api rootProject.ext.dependencies["Hilt"]
+//    api rootProject.ext.dependencies["Hilt"]
 
     // EventBus 和 EventBus的kapt
     api rootProject.ext.dependencies["EventBus"]
@@ -96,7 +96,7 @@ dependencies {
     kapt rootProject.ext.dependencies["GlideAPT"]
     kapt rootProject.ext.dependencies["EventBusAPT"]
     kapt rootProject.ext.dependencies["ARouterAPT"]
-    kapt rootProject.ext.dependencies["HiltAPT"]
+//    kapt rootProject.ext.dependencies["HiltAPT"]
 }
 
 kapt {

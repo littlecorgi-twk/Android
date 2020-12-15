@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.littlecorgi.common.utils.SingleScheduledExecutorService
 import com.umeng.message.PushAgent
 import com.umeng.message.inapp.InAppMessageManager
-import dagger.hilt.android.HiltAndroidApp
 import java.util.concurrent.TimeUnit
 
 /**

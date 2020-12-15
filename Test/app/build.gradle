@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id "androidx.navigation.safeargs"
+    id "dagger.hilt.android.plugin"
 }
 
 android {
@@ -61,6 +62,8 @@ dependencies {
     kapt rootProject.ext.dependencies["EventBusAPT"]
     kapt rootProject.ext.dependencies["ARouterAPT"]
     kapt rootProject.ext.dependencies["HiltAPT"]
+
+    implementation rootProject.ext.dependencies["Hilt"]
 
 //
 //    def lifecycle_version = "2.2.0"

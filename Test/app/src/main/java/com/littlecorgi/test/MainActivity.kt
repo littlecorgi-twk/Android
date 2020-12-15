@@ -22,7 +22,9 @@ import com.littlecorgi.test.mvvm_test.MvvmActivity
 import com.littlecorgi.test.network_test.NetworkActivity
 import com.littlecorgi.test.rxjava_test.RxJavaMainActivity
 import com.littlecorgi.test.scrolling_conflict_test.ScrollingConflictActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
