@@ -2,6 +2,7 @@ package com.littlecorgi.test.coroutine_test.retrofit_coroutine
 
 import com.littlecorgi.test.coroutine_test.retrofit_coroutine.model.Repo
 import io.reactivex.rxjava3.core.Single
+import kotlinx.coroutines.Deferred
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

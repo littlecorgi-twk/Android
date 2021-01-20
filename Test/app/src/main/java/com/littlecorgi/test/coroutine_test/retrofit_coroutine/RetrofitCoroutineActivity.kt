@@ -2,19 +2,23 @@ package com.littlecorgi.test.coroutine_test.retrofit_coroutine
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRetrofitCoroutineBinding
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.Exception
 
 class RetrofitCoroutineActivity : BaseActivity() {
 
     private lateinit var mBinding: ActivityRetrofitCoroutineBinding
+    private lateinit var mViewModel: RetrofitCoroutineViewModel
 
     // RxJava
     private val disposable = CompositeDisposable()
@@ -22,14 +26,7 @@ class RetrofitCoroutineActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_retrofit_coroutine)
-
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.github.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava3CallAdapterFactory.createWithScheduler(Schedulers.io()))
-            .build()
-
-        val api = retrofit.create(Api::class.java)
+        mViewModel = ViewModelProvider(this).get(RetrofitCoroutineViewModel::class.java)
 
         // 使用Retrofit自带的异步执行来实现
         /*api.listRepos("rengwuxian")
@@ -59,7 +56,7 @@ class RetrofitCoroutineActivity : BaseActivity() {
         // lifecycleScope.launch {
         lifecycleScope.launchWhenStarted {
             try {
-                val repos = api.listReposKt("rengwuxian") // 后台
+                val repos = mViewModel.getDataByCoroutine()
                 val name = "${repos[0].name}-kt" // 前台
                 mBinding.textView.text = name // 前台
             } catch (e: Exception) {
