@@ -17,12 +17,14 @@ object RetrofitCoroutineRepository {
 
     private val retrofit = Retrofit.Builder()
         .baseUrl("https://api.github.com/")
+        // .baseUrl("https://www.baidu.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava3CallAdapterFactory.createWithScheduler(Schedulers.io()))
         .build()
 
     private val api = retrofit.create(Api::class.java)
 
-    suspend fun getDataByCoroutine() = api.listReposKt("rengwuxian") // 后台
+    suspend fun getDataByCoroutine(user: String) = api.listReposKt(user) // 后台
 
+    suspend fun getBaidu() = api.getBaidu("https://www.baidu.com")
 }

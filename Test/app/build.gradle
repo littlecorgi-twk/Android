@@ -52,6 +52,10 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     testImplementation rootProject.ext.dependencies["Junit"]
+    testImplementation rootProject.ext.dependencies["mockito-core"]
+    testImplementation rootProject.ext.dependencies["PowerMockito-core"]
+    testImplementation rootProject.ext.dependencies["PowerMockito-junit4"]
+    testImplementation rootProject.ext.dependencies["PowerMockito-mockito2"]
     androidTestImplementation rootProject.ext.dependencies["TestExtJunit"]
     androidTestImplementation rootProject.ext.dependencies["EspressoCore"]
 

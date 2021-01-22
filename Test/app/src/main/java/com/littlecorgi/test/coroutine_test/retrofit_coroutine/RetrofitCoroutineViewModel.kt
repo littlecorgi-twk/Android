@@ -18,5 +18,7 @@ class RetrofitCoroutineViewModel : ViewModel() {
 
     private val rep = RetrofitCoroutineRepository
 
-    suspend fun getDataByCoroutine() = rep.getDataByCoroutine()
+    suspend fun getDataByCoroutine(user: String) = rep.getDataByCoroutine(user)
+
+    suspend fun getBaidu() = rep.getBaidu()
 }

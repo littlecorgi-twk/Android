@@ -30,6 +30,10 @@ ext {
             "Junit"                  : "junit:junit:4.13.1",
             "TestExtJunit"           : 'androidx.test.ext:junit:1.1.2',//测试依赖，新建项目时会默认添加，一般不建议添加
             "EspressoCore"           : 'androidx.test.espresso:espresso-core:3.3.0',//测试依赖，新建项目时会默认添加，一般不建议添加
+            "mockito-core"           : 'org.mockito:mockito-core:2.19.0',
+            "PowerMockito-core"      : 'org.powermock:powermock-core:2.0.9',
+            "PowerMockito-junit4"    : 'org.powermock:powermock-module-junit4:2.0.9',
+            "PowerMockito-mockito2"  : 'org.powermock:powermock-api-mockito2:2.0.9',
 
             // view
             "Material"               : 'com.google.android.material:material:1.2.1',

@@ -56,7 +56,7 @@ class RetrofitCoroutineActivity : BaseActivity() {
         // lifecycleScope.launch {
         lifecycleScope.launchWhenStarted {
             try {
-                val repos = mViewModel.getDataByCoroutine()
+                val repos = mViewModel.getDataByCoroutine("littlecorgi-twk")
                 val name = "${repos[0].name}-kt" // 前台
                 mBinding.textView.text = name // 前台
             } catch (e: Exception) {

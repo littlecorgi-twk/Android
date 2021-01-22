@@ -6,6 +6,7 @@ import kotlinx.coroutines.Deferred
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Url
 
 /**
  * @author littlecorgi 2020/10/2
@@ -19,4 +20,7 @@ interface Api {
 
     @GET("users/{user}/repos")
     fun listReposRx(@Path("user") user: String): Single<List<Repo>>
+
+    @GET
+    suspend fun getBaidu(@Url url: String): String
 }
