@@ -8,12 +8,6 @@ import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.test.R
 import com.littlecorgi.test.databinding.ActivityRetrofitCoroutineBinding
 import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.schedulers.Schedulers
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
-import java.lang.Exception
 
 class RetrofitCoroutineActivity : BaseActivity() {
 

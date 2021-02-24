@@ -1,11 +1,9 @@
 package com.littlecorgi.test.coroutine_test.retrofit_coroutine
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.littlecorgi.test.coroutine_test.retrofit_coroutine.model.Repo
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
+import kotlinx.coroutines.withContext
 
 /**
  * Copyright (c) 2021 Tencent. All rights reserved.
@@ -18,7 +16,12 @@ class RetrofitCoroutineViewModel : ViewModel() {
 
     private val rep = RetrofitCoroutineRepository
 
-    suspend fun getDataByCoroutine(user: String) = rep.getDataByCoroutine(user)
+    suspend fun getDataByCoroutine(user: String) =
+        withContext(Dispatchers.IO) {
+            rep.getDataByCoroutine(user).apply {
+                Log.d("RetrofitCoroutine", "getDataByCoroutine: ${Thread.currentThread().name}")
+            }
+        }
 
     suspend fun getBaidu() = rep.getBaidu()
 }
