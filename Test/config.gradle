@@ -9,11 +9,11 @@ ext {
             targetSdkVersion        : 30,
             versionCode             : 1,
             versionName             : "1.0",
-            kotlinVersion           : "1.4.21",
-            lifecycleVersion        : "2.2.0",
-            navVersion              : "2.3.2",
-            hiltVersion             : "2.31.1-alpha",
-            glideVersion            : "4.11.0",
+            kotlinVersion           : "1.4.30",
+            lifecycleVersion        : "2.3.0",
+            navVersion              : "2.3.3",
+            hiltVersion             : "2.32-alpha",
+            glideVersion            : "4.12.0",
             retrofitVersion         : '2.9.0',
             eventBusVersion         : '3.2.0',
             ARouterVersion          : '1.5.1',
@@ -27,7 +27,7 @@ ext {
             "CoreKtx"                : 'androidx.core:core-ktx:1.3.2',
 
             //test
-            "Junit"                  : "junit:junit:4.13.1",
+            "Junit"                  : "junit:junit:4.13.2",
             "TestExtJunit"           : 'androidx.test.ext:junit:1.1.2',//测试依赖，新建项目时会默认添加，一般不建议添加
             "EspressoCore"           : 'androidx.test.espresso:espresso-core:3.3.0',//测试依赖，新建项目时会默认添加，一般不建议添加
             "mockito-core"           : 'org.mockito:mockito-core:2.19.0',
@@ -36,7 +36,7 @@ ext {
             "PowerMockito-mockito2"  : 'org.powermock:powermock-api-mockito2:2.0.9',
 
             // view
-            "Material"               : 'com.google.android.material:material:1.2.1',
+            "Material"               : 'com.google.android.material:material:1.3.0',
             "RecyclerView"           : 'androidx.recyclerview:recyclerview:1.1.0',
             "ConstraintLayout"       : 'androidx.constraintlayout:constraintlayout:2.0.4',//约束性布局
 

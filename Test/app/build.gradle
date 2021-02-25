@@ -31,7 +31,6 @@ android {
     // Solution: https://my.oschina.net/u/4352984/blog/4318365
     buildFeatures {
         dataBinding = true
-        compose true
         // for view binding :
         // viewBinding = true
     }
@@ -46,11 +45,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-        useIR = true
-    }
-    composeOptions {
-        kotlinCompilerVersion '1.4.21'
-        kotlinCompilerExtensionVersion '1.0.0-alpha10'
     }
 }
 
@@ -83,5 +77,3 @@ kapt {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
 }
-
-apply from: 'jetpack-compose-ext.gradle'
