@@ -31,6 +31,7 @@ android {
     // Solution: https://my.oschina.net/u/4352984/blog/4318365
     buildFeatures {
         dataBinding = true
+        compose true
         // for view binding :
         // viewBinding = true
     }
@@ -38,7 +39,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
@@ -46,6 +46,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        useIR = true
+    }
+    composeOptions {
+        kotlinCompilerVersion '1.4.21'
+        kotlinCompilerExtensionVersion '1.0.0-alpha10'
     }
 }
 
@@ -68,66 +73,6 @@ dependencies {
     kapt rootProject.ext.dependencies["HiltAPT"]
 
     implementation rootProject.ext.dependencies["Hilt"]
-
-//
-//    def lifecycle_version = "2.2.0"
-//    // ViewModel
-//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-//    // LiveData
-//    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-//    // Saved state module for ViewModel
-//    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
-//    // navigation
-//    def nav_version = "2.3.0"
-//    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-//    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-//
-//    // EventBus 和 EventBus的kapt
-//    def eventbus_version = '3.2.0'
-//    implementation "org.greenrobot:eventbus:$eventbus_version"
-//    kapt "org.greenrobot:eventbus-annotation-processor:$eventbus_version"
-//
-//    // Retrofit
-//    def retrofit_version = '2.9.0'
-//    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-//    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-//    implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
-//
-//    // Glide
-//    implementation 'com.github.bumptech.glide:glide:4.11.0'
-//    kapt 'com.github.bumptech.glide:compiler:4.11.0'
-//
-//    // LeakCanary
-//    debugImplementation "com.squareup.leakcanary:leakcanary-android:2.4"
-//
-//    // RxAndroid
-//    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-//
-//    // koin
-//    // Koin for Android
-//    implementation "org.koin:koin-android:$koin_version"
-//    // Koin AndroidX Scope feature
-//    implementation "org.koin:koin-androidx-scope:$koin_version"
-//    // Koin AndroidX ViewModel feature
-//    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
-//    // Koin AndroidX Fragment Factory
-//    implementation "org.koin:koin-androidx-fragment:$koin_version"
-//
-//    // 友盟
-//    //基础组件库依赖(必须) Push 6.2.0版本必须升级新版本Common SDK
-//    implementation 'com.umeng.umsdk:common:9.3.0'
-//    implementation 'com.umeng.umsdk:utdid:1.5.2'
-//    implementation  'com.umeng.umsdk:asms:1.1.3'
-//    implementation 'com.umeng.umsdk:crash:0.0.5'
-//    //友盟push相关依赖(必须)
-//    implementation 'com.umeng.umsdk:push:6.2.0'
-//    implementation 'com.umeng.umsdk:alicloud-httpdns:1.2.5'
-//    implementation 'com.umeng.umsdk:alicloud-utils:1.1.5'
-//    implementation 'com.umeng.umsdk:alicloud_beacon:1.0.1'
-//    implementation 'com.umeng.umsdk:agoo-accs:3.3.9.7-open'
-//    implementation 'com.umeng.umsdk:agoo_networksdk:3.5.5'
-//    implementation 'com.umeng.umsdk:agoo_tlog:3.0.0.17'
-//    implementation 'com.umeng.umsdk:agoo_tnet4android:3.1.14.9'
 }
 
 kapt {
@@ -138,3 +83,5 @@ kapt {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
 }
+
+apply from: 'jetpack-compose-ext.gradle'
