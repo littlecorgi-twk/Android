@@ -9,7 +9,7 @@ ext {
             targetSdkVersion        : 30,
             versionCode             : 1,
             versionName             : "1.0",
-            kotlinVersion           : "1.4.31",
+            kotlinVersion           : "1.4.30",
             lifecycleVersion        : "2.3.1",
             navVersion              : "2.3.4",
             hiltVersion             : "2.33-beta",
