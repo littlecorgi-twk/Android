@@ -41,9 +41,14 @@ android {
 }
 
 dependencies {
-    testImplementation rootProject.ext.dependencies["Junit"]
-    androidTestImplementation rootProject.ext.dependencies["TestExtJunit"]
-    androidTestImplementation rootProject.ext.dependencies["EspressoCore"]
+    testApi rootProject.ext.dependencies["Junit"]
+    testApi rootProject.ext.dependencies["mockito-core"]
+    testApi rootProject.ext.dependencies["PowerMockito-core"]
+    testApi rootProject.ext.dependencies["PowerMockito-junit4"]
+    testApi rootProject.ext.dependencies["PowerMockito-mockito2"]
+    androidTestApi rootProject.ext.dependencies["TestExtJunit"]
+    androidTestApi rootProject.ext.dependencies["EspressoCore"]
+
     api rootProject.ext.dependencies["KotlinStdlib"]
     api rootProject.ext.dependencies["CoreKtx"]
     api rootProject.ext.dependencies["AppCompat"]
