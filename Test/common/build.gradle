@@ -89,13 +89,16 @@ dependencies {
 
     // koin
     // Koin for Android
-    api rootProject.ext.dependencies["KoinAndroid"]
+    api rootProject.ext.dependencies["koinCore"]
     // Koin AndroidX Scope feature
-    api rootProject.ext.dependencies["KoinAndroidX"]
+    api rootProject.ext.dependencies["koinTest"]
     // Koin AndroidX ViewModel feature
-    api rootProject.ext.dependencies["KoinAndroidXViewModel"]
+    api rootProject.ext.dependencies["koinAndroid"]
     // Koin AndroidX Fragment Factory
-    api rootProject.ext.dependencies["KoinAndroidXFragment"]
+    api rootProject.ext.dependencies["koinCompat"]
+
+    // Toasty
+    api rootProject.ext.dependencies["toasty"]
 
     // 注解处理器
     kapt rootProject.ext.dependencies["GlideAPT"]
@@ -113,4 +116,4 @@ kapt {
     }
 }
 
-apply from: 'UMengPush.gradle'
+//apply from: 'UMengPush.gradle'

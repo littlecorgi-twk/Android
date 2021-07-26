@@ -3,77 +3,79 @@ ext {
     isRunAlone = false
     //有重用的地方写在这里面，保证代码一致
     android = [
-            compileSdkVersion       : 30,
-            buildToolsVersion       : "30.0.2",
-            minSdkVersion           : 21,
-            targetSdkVersion        : 30,
-            versionCode             : 1,
-            versionName             : "1.0",
-            kotlinVersion           : "1.4.30",
-            lifecycleVersion        : "2.3.1",
-            navVersion              : "2.3.4",
-            hiltVersion             : "2.33-beta",
-            glideVersion            : "4.12.0",
-            retrofitVersion         : '2.9.0',
-            eventBusVersion         : '3.2.0',
-            ARouterVersion          : '1.5.1',
-            koinVersion             : "2.2.0-rc-1"
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.2",
+            minSdkVersion    : 21,
+            targetSdkVersion : 30,
+            versionCode      : 1,
+            versionName      : "1.0",
+            kotlinVersion    : "1.5.21",
+            lifecycleVersion : "2.3.1",
+            navVersion       : "2.3.4",
+            hiltVersion      : "2.28-alpha",
+            glideVersion     : "4.12.0",
+            retrofitVersion  : '2.9.0',
+            eventBusVersion  : '3.2.0',
+            ARouterVersion   : '1.5.2',
+            koinVersion      : "3.1.2"
     ]
     dependencies = [
-            "javax.annotation"       : 'javax.annotation:jsr250-api:1.0',
-            "AppCompat"              : 'androidx.appcompat:appcompat:1.2.0',
-            "Annotations"            : 'androidx.annotation:annotation:1.0.0',
-            "KotlinStdlib"           : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${android.kotlinVersion}",
-            "CoreKtx"                : 'androidx.core:core-ktx:1.3.2',
+            "javax.annotation"             : 'javax.annotation:jsr250-api:1.0',
+            "AppCompat"                    : 'androidx.appcompat:appcompat:1.3.1',
+            "Annotations"                  : 'androidx.annotation:annotation:1.0.0',
+            "KotlinStdlib"                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${android.kotlinVersion}",
+            "CoreKtx"                      : 'androidx.core:core-ktx:1.3.2',
 
             //test
-            "Junit"                  : "junit:junit:4.13.2",
-            "TestExtJunit"           : 'androidx.test.ext:junit:1.1.2',//测试依赖，新建项目时会默认添加，一般不建议添加
-            "EspressoCore"           : 'androidx.test.espresso:espresso-core:3.3.0',//测试依赖，新建项目时会默认添加，一般不建议添加
-            "mockito-core"           : 'org.mockito:mockito-core:2.19.0',
-            "PowerMockito-core"      : 'org.powermock:powermock-core:2.0.9',
-            "PowerMockito-junit4"    : 'org.powermock:powermock-module-junit4:2.0.9',
-            "PowerMockito-mockito2"  : 'org.powermock:powermock-api-mockito2:2.0.9',
+            "Junit"                        : "junit:junit:4.13.2",
+            "TestExtJunit"                 : 'androidx.test.ext:junit:1.1.2',//测试依赖，新建项目时会默认添加，一般不建议添加
+            "EspressoCore"                 : 'androidx.test.espresso:espresso-core:3.3.0',//测试依赖，新建项目时会默认添加，一般不建议添加
+            "mockito-core"                 : 'org.mockito:mockito-core:2.19.0',
+            "PowerMockito-core"            : 'org.powermock:powermock-core:2.0.9',
+            "PowerMockito-junit4"          : 'org.powermock:powermock-module-junit4:2.0.9',
+            "PowerMockito-mockito2"        : 'org.powermock:powermock-api-mockito2:2.0.9',
 
             // view
-            "Material"               : 'com.google.android.material:material:1.3.0',
-            "RecyclerView"           : 'androidx.recyclerview:recyclerview:1.1.0',
-            "ConstraintLayout"       : 'androidx.constraintlayout:constraintlayout:2.0.4',//约束性布局
+            "Material"                     : 'com.google.android.material:material:1.3.0',
+            "RecyclerView"                 : 'androidx.recyclerview:recyclerview:1.1.0',
+            "ConstraintLayout"             : 'androidx.constraintlayout:constraintlayout:2.0.4',//约束性布局
 
             // Jetpack
-            "LiveDataKtx"            : "androidx.lifecycle:lifecycle-livedata-ktx:${android.lifecycleVersion}",
-            "ViewModelKtx"           : "androidx.lifecycle:lifecycle-viewmodel-ktx:${android.lifecycleVersion}",
-            "ViewModelSavedState"    : "androidx.lifecycle:lifecycle-viewmodel-savedstate:${android.lifecycleVersion}",
-            "Startup"                : "androidx.startup:startup-runtime:1.0.0-rc01",
-            "NavigationFragmentKtx"  : "androidx.navigation:navigation-fragment-ktx:${android.navVersion}",
-            "NavigationUIKtx"        : "androidx.navigation:navigation-ui-ktx:${android.navVersion}",
+            "LiveDataKtx"                  : "androidx.lifecycle:lifecycle-livedata-ktx:${android.lifecycleVersion}",
+            "ViewModelKtx"                 : "androidx.lifecycle:lifecycle-viewmodel-ktx:${android.lifecycleVersion}",
+            "ViewModelSavedState"          : "androidx.lifecycle:lifecycle-viewmodel-savedstate:${android.lifecycleVersion}",
+            "Startup"                      : "androidx.startup:startup-runtime:1.0.0-rc01",
+            "NavigationFragmentKtx"        : "androidx.navigation:navigation-fragment-ktx:${android.navVersion}",
+            "NavigationUIKtx"              : "androidx.navigation:navigation-ui-ktx:${android.navVersion}",
 
             // Hilt
-            "Hilt"                   : "com.google.dagger:hilt-android:${android.hiltVersion}",
-            "HiltAPT"                : "com.google.dagger:hilt-android-compiler:${android.hiltVersion}",
+            "Hilt"                         : "com.google.dagger:hilt-android:${android.hiltVersion}",
+            "HiltAPT"                      : "com.google.dagger:hilt-android-compiler:${android.hiltVersion}",
 
             // koin
-            "KoinAndroidX"           : "org.koin:koin-androidx-scope:${android.koinVersion}",
-            "KoinAndroidXViewModel"  : "org.koin:koin-androidx-viewmodel:${android.koinVersion}",
-            "KoinAndroidXFragment"   : "org.koin:koin-androidx-fragment:${android.koinVersion}",
-            "KoinAndroid"            : "org.koin:koin-android:${android.koinVersion}",
-            "KoinAndroidScope"       : "org.koin:koin-android-scope:${android.koinVersion}",
-            "KoinAndroidViewModel"   : "org.koin:koin-android-viewmodel:${android.koinVersion}",
+            // Koin core features
+            "koinCore"                     : "io.insert-koin:koin-core:${android.koinVersion}",
+            // Koin test features
+            "koinTest"                     : "io.insert-koin:koin-test:${android.koinVersion}",
+            // Koin main features for Android (Scope,ViewModel ...)
+            "koinAndroid"                  : "io.insert-koin:koin-android:${android.koinVersion}",
+            // Koin Java Compatibility
+            "koinCompat"                   : "io.insert-koin:koin-android-compat:${android.koinVersion}",
 
             // 第三方框架
-            "ARouter"                : "com.alibaba:arouter-api:${android.ARouterVersion}",//ARouter
-            "ARouterAPT"             : "com.alibaba:arouter-compiler:${android.ARouterVersion}",// ARouterCompiler
-            "Glide"                  : "com.github.bumptech.glide:glide:${android.glideVersion}",// Glide
-            "GlideAPT"         : "com.github.bumptech.glide:compiler:${android.glideVersion}",// Glide-Compiler
-            "Retrofit"               : "com.squareup.retrofit2:retrofit:${android.retrofitVersion}",//Retrofit
-            "RetrofitConverterGson"  : "com.squareup.retrofit2:converter-gson:${android.retrofitVersion}",//Retrofit-converter-Gson
-            "RetrofitRxJava3Adapter" : "com.squareup.retrofit2:adapter-rxjava3:${android.retrofitVersion}",//Retrofit-rxjava3-adapter
-            "EventBus"               : "org.greenrobot:eventbus:${android.eventBusVersion}",// EventBus
-            "EventBusAPT"            : "org.greenrobot:eventbus-annotation-processor:${android.eventBusVersion}",// EventBus-annotation-processor
-            "LeakCanary"             : 'com.squareup.leakcanary:leakcanary-android:2.4',//LeakCanary
-            "RxJava3"                : 'io.reactivex.rxjava3:rxandroid:3.0.0',
-            "AndPermission"          : 'com.yanzhenjie:permission:2.0.3',//AndPermission
-            "toasty"                 : 'com.github.GrenderG:Toasty:1.5.0',//Toasty
+            "ARouter"                      : "com.alibaba:arouter-api:${android.ARouterVersion}",//ARouter
+            "ARouterAPT"                   : "com.alibaba:arouter-compiler:${android.ARouterVersion}",// ARouterCompiler
+            "Glide"                        : "com.github.bumptech.glide:glide:${android.glideVersion}",// Glide
+            "GlideAPT"                     : "com.github.bumptech.glide:compiler:${android.glideVersion}",// Glide-Compiler
+            "Retrofit"                     : "com.squareup.retrofit2:retrofit:${android.retrofitVersion}",//Retrofit
+            "RetrofitConverterGson"        : "com.squareup.retrofit2:converter-gson:${android.retrofitVersion}",//Retrofit-converter-Gson
+            "RetrofitRxJava3Adapter"       : "com.squareup.retrofit2:adapter-rxjava3:${android.retrofitVersion}",//Retrofit-rxjava3-adapter
+            "EventBus"                     : "org.greenrobot:eventbus:${android.eventBusVersion}",// EventBus
+            "EventBusAPT"                  : "org.greenrobot:eventbus-annotation-processor:${android.eventBusVersion}",// EventBus-annotation-processor
+            "LeakCanary"                   : 'com.squareup.leakcanary:leakcanary-android:2.4',//LeakCanary
+            "RxJava3"                      : 'io.reactivex.rxjava3:rxandroid:3.0.0',
+            "AndPermission"                : 'com.yanzhenjie:permission:2.0.3',//AndPermission
+            "toasty"                       : 'com.github.GrenderG:Toasty:1.5.0',//Toasty
             "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",// BaseRecyclerViewAdapterHelper
     ]
 }

@@ -1,9 +1,12 @@
 package com.littlecorgi.test
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.telephony.TelephonyManager
 import android.util.Log
+import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
@@ -23,6 +26,7 @@ import com.littlecorgi.test.network_test.NetworkActivity
 import com.littlecorgi.test.rxjava_test.RxJavaMainActivity
 import com.littlecorgi.test.scrolling_conflict_test.ScrollingConflictActivity
 import dagger.hilt.android.AndroidEntryPoint
+import es.dmoral.toasty.Toasty
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
@@ -105,6 +109,14 @@ class MainActivity : BaseActivity() {
                 toActivity<KoinActivity>(this) {
                     null
                 }
+            }
+            R.id.button_to_show_something -> {
+                val tm = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                val networkOperatorName = tm.networkOperatorName
+                val simState = tm.simState
+                Log.d(javaClass.simpleName, "networkOperatorName: $networkOperatorName $simState")
+                Toasty.info(this, "networkOperatorName=$networkOperatorName simState=$simState")
+                    .show()
             }
         }
     }
