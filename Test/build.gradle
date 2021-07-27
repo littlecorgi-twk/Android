@@ -14,7 +14,7 @@ buildscript {
         // 由于Tinker不支持4.0.1 所以降级到3.5.3 具体情况见此处
         // https://github.com/Tencent/tinker/issues/1357
         // 傻逼tinker，爷不集成了
-        classpath 'com.android.tools.build:gradle:4.1.3'
+        classpath 'com.android.tools.build:gradle:4.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
