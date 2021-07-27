@@ -1,9 +1,12 @@
 package com.littlecorgi.test
 
 import android.content.Context
+import android.net.wifi.WifiManager
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.provider.Settings
 import android.telephony.TelephonyManager
 import android.util.Log
 import android.view.ContextMenu
@@ -111,12 +114,27 @@ class MainActivity : BaseActivity() {
                 }
             }
             R.id.button_to_show_something -> {
-                val tm = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
-                val networkOperatorName = tm.networkOperatorName
-                val simState = tm.simState
-                Log.d(javaClass.simpleName, "networkOperatorName: $networkOperatorName $simState")
-                Toasty.info(this, "networkOperatorName=$networkOperatorName simState=$simState")
-                    .show()
+                // val tm = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                // val networkOperatorName = tm.networkOperatorName
+                // val simState = tm.simState
+                // Log.d(javaClass.simpleName, "networkOperatorName: $networkOperatorName $simState")
+                // Toasty.info(this, "networkOperatorName=$networkOperatorName simState=$simState")
+                //     .show()
+                // val wifi = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
+                // val connectionInfo = wifi.connectionInfo
+                // Log.d(javaClass.simpleName, "connectionInfo: $connectionInfo")
+                // Toasty.info(this, "connectionInfo=$connectionInfo")
+                //     .show()
+                // Log.d(javaClass.simpleName, "brand: ${Build.BRAND}")
+                // Toasty.info(this, "brand=${Build.BRAND}")
+                //     .show()
+                // val aid = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
+                // Log.d(javaClass.simpleName, "aid: $aid")
+                // Toasty.info(this, "aid=$aid")
+                //     .show()
+                val osVersion = Build.VERSION.RELEASE
+                Log.d(javaClass.simpleName, "osVersion: $osVersion")
+                Toasty.info(this, "osVersion=$osVersion").show()
             }
         }
     }
