@@ -15,6 +15,7 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import com.google.gson.Gson
 import com.littlecorgi.common.BaseActivity
 import com.littlecorgi.common.utils.toActivity
 import com.littlecorgi.test.broadcast_test.BroadcastActivity
@@ -30,6 +31,8 @@ import com.littlecorgi.test.rxjava_test.RxJavaMainActivity
 import com.littlecorgi.test.scrolling_conflict_test.ScrollingConflictActivity
 import dagger.hilt.android.AndroidEntryPoint
 import es.dmoral.toasty.Toasty
+import java.lang.NullPointerException
+import kotlin.math.log
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
@@ -53,9 +56,10 @@ class MainActivity : BaseActivity() {
             layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
             windowManager.addView(view1, layoutParams)
 
-            val handler = Handler()
+            val handler = Handler(Looper.getMainLooper())
             handler.postDelayed({
-                view1.findViewById<TextView>(R.id.text).text = "1324"
+                val text = "1324"
+                view1.findViewById<TextView>(R.id.text).text = text
             }, 1000)
             Looper.loop()
         }.start()
@@ -132,9 +136,18 @@ class MainActivity : BaseActivity() {
                 // Log.d(javaClass.simpleName, "aid: $aid")
                 // Toasty.info(this, "aid=$aid")
                 //     .show()
-                val osVersion = Build.VERSION.RELEASE
-                Log.d(javaClass.simpleName, "osVersion: $osVersion")
-                Toasty.info(this, "osVersion=$osVersion").show()
+                // val osVersion = Build.VERSION.RELEASE
+                // Log.d(javaClass.simpleName, "osVersion: $osVersion")
+                // Toasty.info(this, "osVersion=$osVersion").show()
+                val jsonString = ""
+                val savedAdVideoPlatformInfo =
+                    Gson().fromJson(jsonString, SavedAdVideoPlatformInfo::class.java)
+                try {
+                    Log.d("MainActivity", "navigationToActivity: ${savedAdVideoPlatformInfo.pf}")
+                } catch (e: NullPointerException) {
+                    // 此处再去直接读取值
+                    Log.d("MainActivity", "navigationToActivity: 空指针异常啦")
+                }
             }
         }
     }

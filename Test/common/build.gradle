@@ -14,8 +14,6 @@ android {
 //        applicationId "com.littlecorgi.common"
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
-        versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,13 +39,13 @@ android {
 }
 
 dependencies {
-    testApi rootProject.ext.dependencies["Junit"]
-    testApi rootProject.ext.dependencies["mockito-core"]
-    testApi rootProject.ext.dependencies["PowerMockito-core"]
-    testApi rootProject.ext.dependencies["PowerMockito-junit4"]
-    testApi rootProject.ext.dependencies["PowerMockito-mockito2"]
-    androidTestApi rootProject.ext.dependencies["TestExtJunit"]
-    androidTestApi rootProject.ext.dependencies["EspressoCore"]
+    testImplementation rootProject.ext.dependencies["Junit"]
+    testImplementation rootProject.ext.dependencies["mockito-core"]
+    testImplementation rootProject.ext.dependencies["PowerMockito-core"]
+    testImplementation rootProject.ext.dependencies["PowerMockito-junit4"]
+    testImplementation rootProject.ext.dependencies["PowerMockito-mockito2"]
+    androidTestImplementation rootProject.ext.dependencies["TestExtJunit"]
+    androidTestImplementation rootProject.ext.dependencies["EspressoCore"]
 
     api rootProject.ext.dependencies["KotlinStdlib"]
     api rootProject.ext.dependencies["CoreKtx"]

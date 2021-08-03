@@ -3,23 +3,22 @@
 apply from: "config.gradle"
 buildscript {
     ext.kotlin_version = "1.5.21"
-    ext.nav_version = "2.3.0-alpha01"
+    ext.nav_version = "2.3.5"
     repositories {
         google()
         mavenCentral()
-        jcenter()
         maven { url "https://jitpack.io" }
     }
     dependencies {
         // 由于Tinker不支持4.0.1 所以降级到3.5.3 具体情况见此处
         // https://github.com/Tencent/tinker/issues/1357
         // 傻逼tinker，爷不集成了
-        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath 'com.android.tools.build:gradle:7.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
 
-        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.28-alpha'
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.30.1-alpha'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -29,7 +28,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter()
         maven { url "https://jitpack.io" }
     }
 }
